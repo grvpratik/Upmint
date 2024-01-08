@@ -7,13 +7,13 @@ import MarginX from "../margin-container";
 
 const Nav = () => {
 	return (
-		<header className="sticky top-0 z-50 w-full hidden md:block ">
+		<header className="sticky top-0 z-50 w-full hidden md:block backdrop-blur-sm">
 			<MarginX>
 				<nav className="flex items-center py-3 relative">
 					<div className="flex items-center ">
 						<h1 className="font-bold text-lg">
 							<Link href="/" className="flex items-center gap-2">
-								<span className="hidden md:block text-lg">UpMint</span>
+								<span className="hidden md:block text-lg font-mono">UpMint</span>
 							</Link>
 						</h1>
 					</div>

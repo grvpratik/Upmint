@@ -1,78 +1,96 @@
 "use client";
-import React, { Fragment, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useRef, useState } from "react";
+import { useQuery } from "react-query";
+
 
 import SearchInput from "@/components/search/search-input";
-import { useQuery } from "react-query";
 import getProjects from "@/actions/getProjects";
 import useOnClickOutside from "@/hooks/useOnClickOutside";
-import SearchResults from "./search-results";
-import CircleIncidator from "../loaders/circle-indicator";
+import SearchResults from "@/components/search/search-results";
+import CircleIncidator from "@/components/loaders/circle-indicator";
+
+
 const SearchData = () => {
 	const [searchResult, setSearchResult] = useState([]);
 	const [searchValue, setSearchValue] = useState<string>("");
 	const [searchMenu, setSearchMenu] = useState<boolean>(false);
 	const searchDataRef = useRef<HTMLDivElement>(null);
-	const { isLoading, error, data } = useQuery({
-		queryKey: ["search", searchValue],
-		queryFn: async () => {
-			// Build query parameters
 
-			// Make API request to get collection data
-			const result = await getProjects({
-				search: searchValue,
-				items: 10,
-			});
-			const filteredCount = result.total;
-			const filteredData = result.result;
+	const fetchResult = async() => {
+		// Build query parameters
 
-			// Update collection data based on pagination
-			setSearchResult(filteredData);
+		// Make API request to get collection data
+		const result = await getProjects({
+			search: searchValue,
+			items: 10,
+		});
+		const filteredCount = result.total;
+		const filteredData = result.result;
 
-			// Return data and count
-			return { filteredData, filteredCount };
-		},
+		// Update collection data based on pagination
+		setSearchResult(filteredData);
+
+		// Return data and count
+		return { filteredData, filteredCount };
+	}
+
+	const { isLoading, error, data }:any = useQuery({
+		queryKey: [searchValue],
+		queryFn: fetchResult,
 	});
 	console.log(data);
 
-	const handleClick = () => {
-		setSearchMenu(true);
-	};
+
 	const handleClose = () => {
 		setSearchMenu(false);
 	};
 
 	useOnClickOutside(searchDataRef, handleClose);
+
+	const renderSearchContent = () => {
+		if (isLoading) {
+			return (
+				<div className="h-20 flex items-center justify-center">
+					<CircleIncidator />
+				</div>
+			);
+		} else {
+			return (
+				<div className="relative  shadow-md no-scrollbar">
+					{renderSearchResults()}
+				</div>
+			);
+		}
+	};
+
+	const renderSearchResults = () => {
+		if (error) {
+			return (
+				<div className="h-20 flex items-center justify-center">
+					Error: {error?.message}
+				</div>
+			);
+		} else if (searchResult && searchResult.length > 0 && searchValue) {
+			return <SearchResults searchResult={searchResult} />;
+		} else {
+			return (
+				<div className="h-20 flex items-center justify-center">not found</div>
+			);
+		}
+	};
 	return (
 		<div
 			ref={searchDataRef}
-			className="relative flex-shrink-0 z-50 w-full md:max-w-[27rem] md:min-w-[17rem]"
+			className="md:relative flex-shrink-0 z-50 w-full md:max-w-[27rem] md:min-w-[17rem]"
 		>
 			<SearchInput
-				modalState={searchMenu}
-				onClick={handleClick}
+				
+				onClick={()=>setSearchMenu(true)}
 				setSearch={setSearchValue}
 			/>
 			{searchMenu && searchValue.length > 0 && (
-				<div className="absolute w-full top-full left-0 mt-3 border border-solid  border-border  rounded-xl overflow-hidden">
-					{isLoading ? (
-						<div className="h-20 flex items-center justify-center">
-							<CircleIncidator />
-						</div>
-					) : (
-						<div className="relative bg-background shadow-md">
-							{searchResult && searchResult.length > 0 && searchValue ? (
-								<div className="flex flex-col gap-1 hidescroll bg-background max-h-80 overflow-y-auto z-50 p-3 rounded overflow-hidden">
-									<SearchResults searchResult={searchResult} />
-								</div>
-							) : (
-								<div className="h-20 flex items-center justify-center">
-									not found
-								</div>
-							)}
-						</div>
-					)}
+				<div className="absolute w-full top-full left-0 mt-3 border border-solid border-border rounded-xl overflow-hidden no-scrollbar">
+					{renderSearchContent()}
 				</div>
 			)}
 		</div>

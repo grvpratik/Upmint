@@ -5,7 +5,7 @@ import Link from "next/link";
 const SearchResultItem = ({ result }: { result: any }) => {
 	return (
 		<Link href={`/mints${result.slug}`}>
-			<div className="flex items-center gap-3 p-1.5 rounded hover:bg-violet-950/10 cursor-pointer">
+			<div className="flex items-center gap-3 p-1.5 rounded  cursor-pointer">
 				<div>
 					<Image
 						className="object-cover bg-cover rounded overflow-hidden"
@@ -23,19 +23,15 @@ const SearchResultItem = ({ result }: { result: any }) => {
 
 const SearchResults = ({ searchResult }: { searchResult: any[] }) => {
 	return (
-		<div className="relative bg-background shadow-md">
-			{searchResult && searchResult.length > 0 ? (
-				<div className="flex flex-col gap-1 hidescroll bg-background max-h-80 overflow-y-auto z-50 p-3 rounded overflow-hidden">
-					<div className=" font-semibold text-sm">Total Projects </div>
-					{searchResult.map((result: any, index: number) => (
-						<div className="w-full" key={index}>
-							<SearchResultItem result={result} />
-						</div>
-					))}
-				</div>
-			) : (
-				<div className="h-20 flex items-center justify-center">not found</div>
-			)}
+		<div className="relative  shadow-md no-scrollbar">
+			<div className="flex flex-col gap-1 hidescroll bg-background max-h-80 overflow-y-auto z-50 p-3 rounded overflow-hidden no-scrollbar">
+				<div className=" font-semibold text-sm">Projects </div>
+				{searchResult.map((result: any, index: number) => (
+					<div className="w-full" key={index}>
+						<SearchResultItem result={result} />
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
