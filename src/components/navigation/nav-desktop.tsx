@@ -26,7 +26,7 @@ const Nav = () => {
 						</div>
 					</div>
 					<div className="flex justify-end relative">
-						<button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full p-2 pl-5 pr-5 font-bold transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-blue-600">
+						<button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full p-2 pl-5 pr-5 font-bold transition active:scale-95 duration-300 ease-in-out hover:ring-2 ring-offset-2 ring-blue-600">
 							Primary
 						</button>
 					</div>

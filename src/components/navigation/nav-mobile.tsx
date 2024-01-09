@@ -12,6 +12,7 @@ import {
 	PostSvg,
 	TrendingIconSvg,
 } from "@/components/icons/svg";
+import NavMobLinks from "./nav-mob-links";
 
 const MobileNav = () => {
 	// Ref for the menu
@@ -116,12 +117,12 @@ const MobileNav = () => {
 
 			{/* Search dropdown */}
 			<Transition.Root
-				className="fixed inset-0 w-full backdrop-blur-sm overflow-hidden md:hidden"
+				className="fixed inset-0 z-50 w-full backdrop-blur-sm overflow-hidden md:hidden"
 				show={mobSearchToggle}
 			>
 				<Transition.Child
 					className="flex w-full  py-2 gap-2 px-1 bg-white relative"
-					enter="transition-all ease-in-out duration-400 "
+					enter="transition-all ease-in-out duration-300 "
 					enterFrom="opacity-0 -translate-y-6"
 					enterTo="opacity-100 translate-y-0"
 					leave="transition-all ease-in-out duration-300"
@@ -156,12 +157,12 @@ const MobileNav = () => {
 			</Transition.Root>
 			{/* Menu dropdown */}
 			<Transition.Root
-				className="fixed inset-0 w-full backdrop-blur-sm  overflow-hidden flex items-end md:hidden"
+				className="fixed inset-0 w-full z-40 backdrop-blur-sm  overflow-hidden flex items-end md:hidden"
 				show={mobMenuToggle}
 			>
 				<Transition.Child
 					ref={menuRef}
-					className="flex w-full rounded-t-3xl z-10 shadow-xl bg-white flex-col pt-2 pb-8"
+					className="flex w-full rounded-t-3xl  shadow-xl bg-white flex-col pt-2 pb-8 z-50"
 					enter="transition-all ease-in-out duration-400"
 					enterFrom="opacity-0 translate-y-full"
 					enterTo="opacity-100 translate-y-0"
@@ -169,41 +170,8 @@ const MobileNav = () => {
 					leaveFrom="opacity-100"
 					leaveTo="opacity-0 translate-y-full"
 				>
-					<div className="flex flex-col gap-1  w-full p-2 px-8  pb-2 ">
-						{" "}
-						<Link
-							className="flex items-center font-semibold p-2 gap-2 rounded-lg text-left text-lg"
-							href={""}
-						>
-							{" "}
-							<span>
-								<TrendingIconSvg className="h-6 w-6" />
-							</span>
-							<span>Trending</span>
-						</Link>
-						<Link
-							className="flex items-center font-semibold p-2 gap-2 rounded-lg text-left text-lg"
-							href={""}
-						>
-							<span>
-								<LatestIconSvg className="h-6 w-6" />
-							</span>
-							<span>Latest</span>
-						</Link>
-						<Link
-							className="flex items-center font-semibold p-2 gap-2 rounded-lg text-left text-lg"
-							href={""}
-						>
-							<span>
-								<PostSvg className="h-6 w-6" />
-							</span>
-							<span>Posts</span>
-						</Link>
-						<div className="p-2 rounded-xl text-xl my-2 bg-[#2081e2]">
-							dghfh
-						</div>
-					</div>
-					<div></div>
+					<NavMobLinks/>
+					
 				</Transition.Child>
 			</Transition.Root>
 		</>
@@ -211,3 +179,5 @@ const MobileNav = () => {
 };
 
 export default MobileNav;
+
+

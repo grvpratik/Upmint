@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Inter,Outfit } from "next/font/google";
 import "@/styles/globals.css";
 import QueryProvider from "@/providers/query-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Outfit({ subsets: ["latin"] });
 
 export default function RootLayout({
 	children,
