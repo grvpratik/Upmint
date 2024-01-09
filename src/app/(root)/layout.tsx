@@ -1,16 +1,16 @@
-import MobileNav from "@/components/Header/mobile-nav";
-import Nav from "@/components/Header/nav";
+import MobileNav from "@/components/navigation/mobile-nav";
+import Nav from "@/components/navigation/nav";
 import React from "react";
 
 
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<main className="flex flex-col scroll-smooth antialiased no-scrollbar">
+		<div className="flex relative flex-col scroll-smooth antialiased ">
 			<MobileNav />
 			<Nav />
 			{children}
-		</main>
+		</div>
 	);
 };
 

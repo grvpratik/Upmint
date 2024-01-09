@@ -13,20 +13,20 @@ const Nav = () => {
 					<div className="flex items-center ">
 						<h1 className="font-bold text-lg">
 							<Link href="/" className="flex items-center gap-2">
-								<span className="hidden md:block text-lg font-mono">UpMint</span>
+								<span className="hidden md:block text-lg ">UpMint</span>
 							</Link>
 						</h1>
 					</div>
-					<div className="flex flex-1 justify-between mx-4">
+					<div className="flex flex-1 justify-between sm:mx:2 md:mx:3  lg:mx-4">
 						<div className=" flex items-center  flex-shrink-0 mx-4">
 							<SearchData />
 						</div>
-						<div className="flex items-center justify-between mx-4">
+						<div className="flex items-center justify-between sm:mx:2 md:mx:3  lg:mx-4">
 							<MainNav />
 						</div>
 					</div>
-					<div className="flex justify-end">
-						<button className="bg-blue-400 p-2 pl-4 pr-4 rounded-lg font-bold transition duration-500 text-white ease-in-out hover:ring-2 ring-offset-2 ring-blue-600">
+					<div className="flex justify-end relative">
+						<button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full p-2 pl-5 pr-5 font-bold transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-blue-600">
 							Primary
 						</button>
 					</div>

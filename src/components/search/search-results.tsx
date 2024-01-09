@@ -15,7 +15,7 @@ const SearchResultItem = ({ result }: { result: any }) => {
 						width={30}
 					/>
 				</div>
-				<div className="font-medium text-base">{result.name}</div>
+				<div className=" font-medium text-sm line-clamp-1">{result.name}</div>
 			</div>
 		</Link>
 	);
@@ -23,7 +23,7 @@ const SearchResultItem = ({ result }: { result: any }) => {
 
 const SearchResults = ({ searchResult }: { searchResult: any[] }) => {
 	return (
-		<div className="relative  shadow-md no-scrollbar">
+		<div className="relative  shadow-md no-scrollbar bg-white">
 			<div className="flex flex-col gap-1 hidescroll bg-background max-h-80 overflow-y-auto z-50 p-3 rounded overflow-hidden no-scrollbar">
 				<div className=" font-semibold text-sm">Projects </div>
 				{searchResult.map((result: any, index: number) => (

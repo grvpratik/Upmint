@@ -50,7 +50,7 @@ const SearchData = () => {
 	const renderSearchContent = () => {
 		if (isLoading) {
 			return (
-				<div className="h-20 flex items-center justify-center">
+				<div className="h-20 flex items-center justify-center bg-white">
 					<CircleIncidator />
 				</div>
 			);
@@ -66,7 +66,7 @@ const SearchData = () => {
 	const renderSearchResults = () => {
 		if (error) {
 			return (
-				<div className="h-20 flex items-center justify-center">
+				<div className="h-20 flex items-center justify-center bg-white">
 					Error: {error?.message}
 				</div>
 			);
@@ -74,7 +74,9 @@ const SearchData = () => {
 			return <SearchResults searchResult={searchResult} />;
 		} else {
 			return (
-				<div className="h-20 flex items-center justify-center">not found</div>
+				<div className="h-20 flex items-center justify-center bg-white">
+					not found
+				</div>
 			);
 		}
 	};
@@ -84,12 +86,11 @@ const SearchData = () => {
 			className="md:relative flex-shrink-0 z-50 w-full md:max-w-[27rem] md:min-w-[17rem]"
 		>
 			<SearchInput
-				
-				onClick={()=>setSearchMenu(true)}
+				onClick={() => setSearchMenu(true)}
 				setSearch={setSearchValue}
 			/>
 			{searchMenu && searchValue.length > 0 && (
-				<div className="absolute w-full top-full left-0 mt-3 border border-solid border-border rounded-xl overflow-hidden no-scrollbar">
+				<div className="absolute w-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] top-full left-0 mt-3 border border-solid border-border rounded-xl overflow-hidden no-scrollbar">
 					{renderSearchContent()}
 				</div>
 			)}

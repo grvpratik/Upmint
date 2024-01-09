@@ -1,26 +1,43 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import Link from "next/link";
+import { Transition } from "@headlessui/react";
+
+import useOnClickOutside from "@/hooks/useOnClickOutside";
 
 import MarginX from "@/components/margin-container";
-
-import { Transition } from "@headlessui/react";
-import SearchData from "../search/search-data";
-
+import SearchData from "@/components/search/search-data";
+import {
+	LatestIconSvg,
+	PostSvg,
+	TrendingIconSvg,
+} from "@/components/icons/svg";
 
 const MobileNav = () => {
+	// Ref for the menu
+	const menuRef = useRef<HTMLDivElement>(null);
+
+	// State to handle search and menu toggles
 	const [mobSearchToggle, setMobSearchToggle] = useState<boolean>(false);
 	const [mobMenuToggle, setMobMenuToggle] = useState<boolean>(false);
 
-	 
+	// Function to handle outside click when menu is open
+	const outSideClick = () => {
+		setMobMenuToggle(false);
+	};
 
-	
-	
+	// Hook to detect click outside menu
+	useOnClickOutside(menuRef, outSideClick);
+
 	return (
 		<>
-			<header className="sticky top-0 w-full md:hidden  backdrop-blur-md ">
+			{/* Header for mobile view */}
+			<header className="sticky top-0 w-full md:hidden  backdrop-blur ">
 				<MarginX>
+					{/* Mobile navigation */}
 					<nav className="w-full flex justify-between items-center py-2 h-full">
 						<div className="h-6 w-6 flex items-center justify-center">
+							{/* Your logo or branding */}
 							<svg viewBox="0 0 78.2 66.4" xmlns="http://www.w3.org/2000/svg">
 								<g
 									id="svgGroup"
@@ -38,13 +55,15 @@ const MobileNav = () => {
 								</g>
 							</svg>
 						</div>
+						{/* Buttons for search and menu */}
 						<div className="flex gap-2 items-center">
+							{/* Search button */}
 							<div>
 								<button
 									onClick={() => setMobSearchToggle(true)}
 									data-collapse-toggle="navbar-sticky"
 									type="button"
-									className=" border-solid  inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
+									className=" shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]    inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
 									aria-controls="navbar-sticky"
 									aria-expanded="false"
 								>
@@ -63,14 +82,14 @@ const MobileNav = () => {
 										/>
 									</svg>
 								</button>
-							</div>{" "}
+							</div>
+							{/* Menu button */}
 							<div>
-								{" "}
 								<button
 									onClick={() => setMobMenuToggle(true)}
 									data-collapse-toggle="navbar-sticky"
 									type="button"
-									className=" border-solid  inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
+									className="shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]   inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
 									aria-controls="navbar-sticky"
 									aria-expanded="false"
 								>
@@ -94,6 +113,8 @@ const MobileNav = () => {
 					</nav>
 				</MarginX>
 			</header>
+
+			{/* Search dropdown */}
 			<Transition.Root
 				className="fixed inset-0 w-full backdrop-blur-sm overflow-hidden md:hidden"
 				show={mobSearchToggle}
@@ -131,6 +152,58 @@ const MobileNav = () => {
 							/>
 						</svg>
 					</button>
+				</Transition.Child>
+			</Transition.Root>
+			{/* Menu dropdown */}
+			<Transition.Root
+				className="fixed inset-0 w-full backdrop-blur-sm  overflow-hidden flex items-end md:hidden"
+				show={mobMenuToggle}
+			>
+				<Transition.Child
+					ref={menuRef}
+					className="flex w-full rounded-t-3xl z-10 shadow-xl bg-white flex-col pt-2 pb-8"
+					enter="transition-all ease-in-out duration-400"
+					enterFrom="opacity-0 translate-y-full"
+					enterTo="opacity-100 translate-y-0"
+					leave="transition-all ease-in-out duration-300"
+					leaveFrom="opacity-100"
+					leaveTo="opacity-0 translate-y-full"
+				>
+					<div className="flex flex-col gap-1  w-full p-2 px-8  pb-2 ">
+						{" "}
+						<Link
+							className="flex items-center font-semibold p-2 gap-2 rounded-lg text-left text-lg"
+							href={""}
+						>
+							{" "}
+							<span>
+								<TrendingIconSvg className="h-6 w-6" />
+							</span>
+							<span>Trending</span>
+						</Link>
+						<Link
+							className="flex items-center font-semibold p-2 gap-2 rounded-lg text-left text-lg"
+							href={""}
+						>
+							<span>
+								<LatestIconSvg className="h-6 w-6" />
+							</span>
+							<span>Latest</span>
+						</Link>
+						<Link
+							className="flex items-center font-semibold p-2 gap-2 rounded-lg text-left text-lg"
+							href={""}
+						>
+							<span>
+								<PostSvg className="h-6 w-6" />
+							</span>
+							<span>Posts</span>
+						</Link>
+						<div className="p-2 rounded-xl text-xl my-2 bg-[#2081e2]">
+							dghfh
+						</div>
+					</div>
+					<div></div>
 				</Transition.Child>
 			</Transition.Root>
 		</>
