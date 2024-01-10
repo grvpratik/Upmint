@@ -3,6 +3,8 @@ import { ChevronLeftSvg, ChevronRightSvg } from "@/components/icons/svg";
 import MarginX from "@/components/margin-container";
 import Image from "next/image";
 import React, { RefObject, useRef } from "react";
+import IntroEarlyCard from "./intro-early-card";
+import Button from "@/components/ui/Button";
 
 
 const IntroEarlySection = () => {
@@ -31,10 +33,12 @@ const IntroEarlySection = () => {
 			});
 		};
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col my-4">
 			<MarginX>
-				<div className="head flex justify-between rounded-xl min-h-0">
-					<div>Early</div>
+				<div className="head flex justify-between rounded-xl min-h-0 py-4 font-montserrat">
+					<div className=" font-semibold text-xl md:text-2xl lg:text-3xl ">
+						Early Projects
+					</div>
 					<div className="flex items-center gap-2">
 						{" "}
 						<div
@@ -48,114 +52,25 @@ const IntroEarlySection = () => {
 							onClick={() => navigation("right")}
 						>
 							<ChevronRightSvg className="h-6 w-6" />
-						</div>
+						</div>{" "}
+						<Button.Secondary className=" rounded-xl">
+							view all
+						</Button.Secondary>
 					</div>
 				</div>
 				<div className=" overflow-y-auto no-scrollbar">
 					<div
 						ref={carouselContainer}
-						className="flex  gap-4 overflow-y-hidden  no-scrollbar"
+						className="flex  gap-4 overflow-y-hidden py-2  no-scrollbar"
 					>
-						<div className="card relative flex flex-col p-8 gap-4 max-w-xs  rounded-2xl overflow-hidden lg:max-w-md min-h-[4rem]  flex-shrink-0">
-							{/* <div className="bg-gradient-to-r -z-10 from-gray-800/30 to-transparent absolute inset-0 "></div> */}
-							<div className="flex items-center gap-2">
-								<div className="relative h-12 w-12 rounded-lg overflow-hidden">
-									<Image
-										fill
-										src={
-											"https://pbs.twimg.com/profile_images/1699992200392712192/vA21X1rr_400x400.jpg"
-										}
-										alt=""
-									/>
-								</div>
-								<div className=" line-clamp-1 leading-6 font-semibold text-lg ">
-									{" "}
-									The is title
-								</div>
-							</div>
-							<div className=" line-clamp-3 ">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Architecto a hic repellat inventore aspernatur, cupiditate eaque
-								debitis iusto molestiae voluptatum reiciendis sunt itaque
-								necessitatibus aperiam in? Maiores amet ratione nulla?
-							</div>
-							<div> the fuck is here</div>
-						</div>
-						<div className="card relative flex flex-col p-8 gap-4 max-w-xs  rounded-2xl overflow-hidden lg:max-w-md min-h-[4rem]  flex-shrink-0">
-							{/* <div className="bg-gradient-to-r -z-10 from-gray-800/30 to-transparent absolute inset-0 "></div> */}
-							<div className="flex items-center gap-2">
-								<div className="relative h-12 w-12 rounded-lg overflow-hidden">
-									<Image
-										fill
-										src={
-											"https://pbs.twimg.com/profile_images/1699992200392712192/vA21X1rr_400x400.jpg"
-										}
-										alt=""
-									/>
-								</div>
-								<div className=" line-clamp-1 leading-6 font-semibold text-lg ">
-									{" "}
-									The is title
-								</div>
-							</div>
-							<div className=" line-clamp-3 ">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Architecto a hic repellat inventore aspernatur, cupiditate eaque
-								debitis iusto molestiae voluptatum reiciendis sunt itaque
-								necessitatibus aperiam in? Maiores amet ratione nulla?
-							</div>
-							<div> the fuck is here</div>
-						</div>
-						<div className="card relative flex flex-col p-8 gap-4 max-w-xs  rounded-2xl overflow-hidden lg:max-w-md min-h-[4rem]  flex-shrink-0">
-							{/* <div className="bg-gradient-to-r -z-10 from-gray-800/30 to-transparent absolute inset-0 "></div> */}
-							<div className="flex items-center gap-2">
-								<div className="relative h-12 w-12 rounded-lg overflow-hidden">
-									<Image
-										fill
-										src={
-											"https://pbs.twimg.com/profile_images/1699992200392712192/vA21X1rr_400x400.jpg"
-										}
-										alt=""
-									/>
-								</div>
-								<div className=" line-clamp-1 leading-6 font-semibold text-lg ">
-									{" "}
-									The is title
-								</div>
-							</div>
-							<div className=" line-clamp-3 ">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Architecto a hic repellat inventore aspernatur, cupiditate eaque
-								debitis iusto molestiae voluptatum reiciendis sunt itaque
-								necessitatibus aperiam in? Maiores amet ratione nulla?
-							</div>
-							<div> the fuck is here</div>
-						</div>
-						<div className="card relative flex flex-col p-8 gap-4 max-w-xs  rounded-2xl overflow-hidden lg:max-w-md min-h-[4rem]  flex-shrink-0">
-							{/* <div className="bg-gradient-to-r -z-10 from-gray-800/30 to-transparent absolute inset-0 "></div> */}
-							<div className="flex items-center gap-2">
-								<div className="relative h-12 w-12 rounded-lg overflow-hidden">
-									<Image
-										fill
-										src={
-											"https://pbs.twimg.com/profile_images/1699992200392712192/vA21X1rr_400x400.jpg"
-										}
-										alt=""
-									/>
-								</div>
-								<div className=" line-clamp-1 leading-6 font-semibold text-lg ">
-									{" "}
-									The is title
-								</div>
-							</div>
-							<div className=" line-clamp-3 ">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Architecto a hic repellat inventore aspernatur, cupiditate eaque
-								debitis iusto molestiae voluptatum reiciendis sunt itaque
-								necessitatibus aperiam in? Maiores amet ratione nulla?
-							</div>
-							<div> the fuck is here</div>
-						</div>
+						<IntroEarlyCard />
+						<IntroEarlyCard />
+						<IntroEarlyCard />
+						<IntroEarlyCard />
+						<IntroEarlyCard />
+						<IntroEarlyCard />
+						<IntroEarlyCard />
+						<IntroEarlyCard />
 					</div>
 				</div>
 			</MarginX>

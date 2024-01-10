@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import OptImage from "../ui/optimised-image";
+
+
+import OptImage from "@/components/ui/optimised-image";
+
+
 const IntroPosts = () => {
 	return (
 		<>
@@ -13,7 +17,7 @@ const IntroPosts = () => {
                         alt=""/>
 					
 					<div className="flex flex-col  gap-1 my-1 ">
-						<span className="text-base font-semibold line-clamp-2 leading-tight">
+						<span className="text-base font-semibold line-clamp-2 leading-tight text-gray-800">
 							How to start 💸 earnging from crypto 🏦 without investment
 						</span>
 						<span className="  text-xs leading-4 line-clamp-1  opacity-70">

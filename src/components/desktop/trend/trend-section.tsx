@@ -1,7 +1,8 @@
 import React from "react";
-import MintTabCard from "./mint-tab-card-list";
+import MintTabCard from "./trend-card";
 import Button from "@/components/ui/Button";
 import MarginX from "@/components/margin-container";
+import Link from "next/link";
 
 const trendingData: any = [
 	{
@@ -306,51 +307,20 @@ const trendingData: any = [
 		updatedAt: "2024-01-02T07:16:50.850Z",
 		__v: 0,
 	},
-	{
-		_id: "658ecada5de82f96b33fb1f4",
-		slug: "exelandnft",
-		name: "EXE",
-		description:
-			"New era is being created with EXE. Not just a brand, but a world!",
-		blockchain: "",
-		imageUrl:
-			"https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg",
-		bannerUrl:
-			"https://pbs.twimg.com/profile_banners/993779862908305408/1700003350/1500x500",
-		rating: 5,
-		whitelist: false,
-		featured: false,
-		verified: false,
-		prevFollower: 8167,
-		currFollower: 8703,
-		accountCreated: "2023-12-29T13:34:09.744Z",
-		mintInfo: {
-			supply: 0,
-			startTime: "",
-			mintDate: null,
-			_id: "658ecada5de82f96b33fb1f5",
-		},
-		social: {
-			x: "https://twitter.com/exelandnft",
-			website: "https://discord.gg/exenft",
-			_id: "658ecada5de82f96b33fb1f6",
-		},
-		tags: ["nft"],
-		createdAt: "2023-12-29T13:34:18.636Z",
-		updatedAt: "2024-01-02T07:16:50.850Z",
-		__v: 0,
-	},
+	
 ];
 
 const IntroTrendSection = () => {
 	return (
-		<section className="flex flex-col gap-2">
+		<section className="flex flex-col my-4">
 			<MarginX>
-				<div className="w-full justify-between items-center flex">
-					<h1>Trending</h1>
-					<Button.Secondary className=" rounded-xl">view all</Button.Secondary>
+				<div className="w-full justify-between items-center flex py-4">
+					<div className="  font-semibold text-xl md:text-2xl lg:text-3xl  font-montserrat ">
+						Trending Projects
+					</div>
+					<Link href={'/trending'}><Button.Secondary className=" rounded-xl">view all</Button.Secondary></Link>
 				</div>
-				<div className="grid my-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-3">
+				<div className="grid my-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5">
 					{/* Render MintTabCard components based on earlyData */}
 					{trendingData.length > 0 ? (
 						trendingData.map((data: any, index: number) => (

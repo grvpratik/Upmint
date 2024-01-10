@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-import SearchData from "../search/search-data";
-import { MainNav } from "./nav-links";
-import MarginX from "../margin-container";
+import SearchData from "@/components/search/search-data";
+import { MainNav } from "@/components/navigation/nav-links";
+import MarginX from "@/components/margin-container";
+import { cn } from "@/libs/utils";
 
-const Nav = () => {
+const Nav = ({ className }: { className?: string }) => {
 	return (
-		<header className="sticky top-0 z-50 w-full hidden md:block backdrop-blur-sm">
+		<header className={cn("sticky top-0 z-50 w-full hidden md:block backdrop-blur-sm",className)}>
 			<MarginX>
 				<nav className="flex items-center py-3 relative">
 					<div className="flex items-center ">

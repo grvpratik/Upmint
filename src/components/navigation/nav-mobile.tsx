@@ -13,8 +13,9 @@ import {
 	TrendingIconSvg,
 } from "@/components/icons/svg";
 import NavMobLinks from "./nav-mob-links";
+import { cn } from "@/libs/utils";
 
-const MobileNav = () => {
+const MobileNav = ({className}:{className?:string}) => {
 	// Ref for the menu
 	const menuRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +34,7 @@ const MobileNav = () => {
 	return (
 		<>
 			{/* Header for mobile view */}
-			<header className="sticky top-0 w-full md:hidden  backdrop-blur ">
+			<header className={cn("sticky top-0 w-full md:hidden  backdrop-blur ",className)}>
 				<MarginX>
 					{/* Mobile navigation */}
 					<nav className="w-full flex justify-between items-center py-2 h-full">

@@ -1,8 +1,12 @@
-import { Inter,Outfit } from "next/font/google";
+
+
+
 import "@/styles/globals.css";
 import QueryProvider from "@/providers/query-provider";
+import { montserrat, outfit, inter } from "@/libs/font";
+import { cn } from "@/libs/utils";
 
-const inter = Outfit({ subsets: ["latin"] });
+
 
 export default function RootLayout({
 	children,
@@ -11,7 +15,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={cn("antialiased", montserrat.variable, outfit.variable, inter.variable)}>
 				<QueryProvider>{children}</QueryProvider>
 			</body>
 		</html>
