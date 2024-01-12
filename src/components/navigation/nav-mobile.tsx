@@ -34,7 +34,7 @@ const MobileNav = ({className}:{className?:string}) => {
 	return (
 		<>
 			{/* Header for mobile view */}
-			<header className={cn("sticky top-0 w-full md:hidden  backdrop-blur ",className)}>
+			<header className={cn("sticky top-0 w-full md:hidden  z-50 backdrop-blur ",className)}>
 				<MarginX>
 					{/* Mobile navigation */}
 					<nav className="w-full flex justify-between items-center py-2 h-full">
@@ -65,7 +65,7 @@ const MobileNav = ({className}:{className?:string}) => {
 									onClick={() => setMobSearchToggle(true)}
 									data-collapse-toggle="navbar-sticky"
 									type="button"
-									className=" shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]    inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
+									className=" inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
 									aria-controls="navbar-sticky"
 									aria-expanded="false"
 								>
@@ -91,7 +91,7 @@ const MobileNav = ({className}:{className?:string}) => {
 									onClick={() => setMobMenuToggle(true)}
 									data-collapse-toggle="navbar-sticky"
 									type="button"
-									className="shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]   inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
+									className=" inline-flex items-center p-1 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-gray-700"
 									aria-controls="navbar-sticky"
 									aria-expanded="false"
 								>

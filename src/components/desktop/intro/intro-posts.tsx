@@ -1,21 +1,32 @@
 import React from "react";
 import Image from "next/image";
 
-
 import OptImage from "@/components/ui/optimised-image";
-
+import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 const IntroPosts = () => {
 	return (
 		<>
 			<div className=" w-full flex flex-col">
 				{" "}
+				<div className="flex  justify-between w-full h-14 items-center">
+					<h1 className=" text-xl md:text-2xl font-montserrat font-semibold ">
+						Posts
+					</h1>
+					<Link href={"/posts"}>
+						<Button.Secondary className="rounded-xl text-gray-600">
+							view all
+						</Button.Secondary>
+					</Link>
+				</div>
 				<div className="post flex overflow-hidden items-center  gap-2">
-					
-                        <OptImage className="h-16 w-16  md:h-20 md:w-20 rounded-xl overflow-hidden flex-shrink-0 mx-2 "
-                            src="https://pbs.twimg.com/profile_banners/927543724632047616/1702815436/1080x360"
-                        alt=""/>
-					
+					<OptImage
+						className="h-16 w-16  md:h-20 md:w-20 rounded-xl overflow-hidden flex-shrink-0 mx-2 "
+						src="https://pbs.twimg.com/profile_banners/927543724632047616/1702815436/1080x360"
+						alt=""
+					/>
+
 					<div className="flex flex-col  gap-1 my-1 ">
 						<span className="text-base font-semibold line-clamp-2 leading-tight text-gray-800">
 							How to start 💸 earnging from crypto 🏦 without investment

@@ -8,7 +8,7 @@ import { cn } from "@/libs/utils";
 
 const Nav = ({ className }: { className?: string }) => {
 	return (
-		<header className={cn("sticky top-0 z-50 w-full hidden md:block backdrop-blur-sm",className)}>
+		<header className={cn("sticky top-0 z-50 w-full hidden md:block",className)}>
 			<MarginX>
 				<nav className="flex items-center py-3 relative">
 					<div className="flex items-center ">

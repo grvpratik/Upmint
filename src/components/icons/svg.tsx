@@ -216,3 +216,59 @@ export const DiscordSvg: React.FC<IconProps> = (props) => {
 		</svg>
 	);
 };
+
+
+export const TwitterXSvg: React.FC<IconProps> = (props) => {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 512 512"
+			{...props}
+		>
+			<g clipPath="url(#clip0_84_15698)">
+				<rect width="512" height="512" fill="none" rx="60"></rect>
+				<path
+					fill="#000"
+					d="M355.904 100h52.928L293.2 232.16 429.232 412H322.72l-83.424-109.072L143.84 412H90.88l123.68-141.36L84.065 100H193.28l75.408 99.696L355.904 100zm-18.576 280.32h29.328L177.344 130.016h-31.472L337.328 380.32z"
+				></path>
+			</g>
+			<defs>
+				<clipPath id="clip0_84_15698">
+					<path fill="#fff" d="M0 0H512V512H0z"></path>
+				</clipPath>
+			</defs>
+		</svg>
+	);
+};
+
+export const PlusFilledSvg: React.FC<IconProps> = (props) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="0"
+      viewBox="0 0 32 32"
+    >
+      <path d="M15.5 29.5c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zm6.438-13.562a1 1 0 00-1-1h-4v-4a1 1 0 00-1-1h-1a1 1 0 00-1 1v4h-4a1 1 0 00-1 1v1a1 1 0 001 1h4v4a1 1 0 001 1h1a1 1 0 001-1v-4h4a1 1 0 001-1v-1z"></path>
+    </svg>
+  );
+}
+
+export const TickFilledSvg: React.FC<IconProps> = (props) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="0"
+      viewBox="0 0 24 24"
+    >
+      <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm5.676 8.237l-6 5.5a1 1 0 01-1.383-.03l-3-3a1 1 0 111.414-1.414l2.323 2.323 5.294-4.853a1 1 0 111.352 1.474z"></path>
+    </svg>
+  );
+};
+

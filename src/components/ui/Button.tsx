@@ -16,7 +16,7 @@ const PrimaryButton: React.FC<ButtonProps> = ({
 }) => (
 	<button
 		className={cn(
-			"bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition-all duration-200 ease-in-out",
+			"bg-blue-500 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition-all duration-200 ease-in-out",
 			className
 		)}
 		{...props}
@@ -32,7 +32,7 @@ const SecondaryButton: React.FC<ButtonProps> = ({
 }) => (
 	<button
 		className={cn(
-			"bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded transition-all duration-200 ease-in-out",
+			"bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-1.5 px-3 rounded transition-all duration-200 ease-in-out",
 			className
 		)}
 		{...props}

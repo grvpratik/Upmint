@@ -1,10 +1,12 @@
-import React from 'react'
-import Image from 'next/image'
-import OptImage from '@/components/ui/optimised-image';
+import React from "react";
+import Image from "next/image";
+import OptImage from "@/components/ui/optimised-image";
+import { TwitterXSvg } from "@/components/icons/svg";
+import { nFormatter } from "@/libs/utils";
 const IntroEarlyCard = () => {
-  return (
-		<div className="card relative cursor-pointer flex flex-col p-8 gap-4 max-w-xs border-1 border-solid overflow-hidden ease-[cubic-bezier(0.05,0.7,0.1,1);] transition-all  hover:scale-[1.01] duration-200 rounded-3xl  lg:max-w-md min-h-[4rem]  flex-shrink-0 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-			{/*	<div className="hover:bg-gradient-to-t hover:to-50% -z-10 hover:from-gray-200/50 hover:to-transparent absolute inset-0 "></div> */}
+	return (
+		<div className="card mx-1 group relative cursor-pointer flex flex-col p-8 gap-4 max-w-xs hover:border-[1.5px] border-gray-300 border-solid overflow-hidden ease-in-out transition-all  hover:scale-[1.01] rounded-3xl   lg:max-w-md min-h-[4rem]  flex-shrink-0 border duration-150">
+			{/* <div className=" overflow-hidden rounded-3xl bg-gradient-to-r to-50% -z-10 from-gray-300/50 to-transparent absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity ease-in-out duration-200 "></div> */}
 
 			<div className="flex items-center gap-2">
 				<OptImage
@@ -26,15 +28,22 @@ const IntroEarlyCard = () => {
 				molestiae voluptatum reiciendis sunt itaque necessitatibus aperiam in?
 				Maiores amet ratione nulla?
 			</div>
-			<div className="flex">
+			<div className="flex items-center gap-2">
 				{" "}
-				<div className="flex bg-gray-300/50 backdrop-blur rounded-xl  p-1">
-					<span>svg</span>
-					<span>name</span>
+				<div className="flex bg-gray-300/50 backdrop-blur rounded-xl items-center px-2 p-1.5">
+					<TwitterXSvg className="h-5 w-5 opacity-75 text-sm font-bold" />
+
+					<span className=" font-normal text-sm">{nFormatter(43254, 1)}</span>
+				</div>
+				<div className="flex bg-gray-300/50 backdrop-blur rounded-xl px-2 text-sm font-bold items-center  p-1.5  bg-gradient-to-r from-[#9945FF]/50 via-indigo-500/50 to-[#14F195]/50 text-white">
+					<span>SOL</span>
+				</div>
+				<div className="flex bg-gray-300/50 backdrop-blur rounded-xl items-center px-2 p-1.5 bg-[#627EEA] text-white bg-gradient-to-r from-[#627EEA]  to-[#fff]/50">
+					<span className=" font-bold text-sm">ETH</span>
 				</div>
 			</div>
 		</div>
 	);
-}
+};
 
-export default IntroEarlyCard
+export default IntroEarlyCard;
