@@ -32,8 +32,8 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, onTagSelected }) => {
 
   return (
     <div>
-      <h3>Tags</h3>
-      <ul className="flex gap-2">
+      <h3 className=" items-start py-3 font-medium  md:text-lg flex">Tags</h3>
+      <ul className="flex gap-3 flex-wrap">
         {tags.map((tag: Tag) => (
           <li
             className={cn(
