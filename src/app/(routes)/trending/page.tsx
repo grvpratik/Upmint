@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 
 
-import FilterArea from "@/components/filter-area";
+import FilterArea from "@/components/filter-client";
 import OptImage from "@/components/ui/optimised-image";
+import FilterClient from "@/components/filter-client";
 
 const TrendingPage = () => {
  
@@ -22,7 +23,7 @@ const TrendingPage = () => {
           alt={""}
         />
       </div>
-		 <FilterArea/>
+		 <FilterClient/>
     </>
   );
 };

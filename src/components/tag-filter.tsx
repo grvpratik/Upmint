@@ -9,10 +9,15 @@ type Tag = string;
 // Define the props interface for TagFilter component
 interface TagFilterProps {
   tags: Tag[];
+  filter: any;
   onTagSelected: (selectedTags: Tag[]) => void;
 }
 
-const TagFilter: React.FC<TagFilterProps> = ({ tags, onTagSelected }) => {
+const TagFilter: React.FC<TagFilterProps> = ({
+  tags,
+  onTagSelected,
+  filter,
+}) => {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 
   const handleTagClick = (tag: Tag) => {
@@ -25,19 +30,22 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, onTagSelected }) => {
     } else {
       newSelectedTags.push(tag);
     }
-
     setSelectedTags(newSelectedTags);
-    onTagSelected(newSelectedTags);
+    onTagSelected({
+      ...filter,
+      page: 1,
+      tags: newSelectedTags,
+    });
   };
-
+  
   return (
     <div>
-      <h3 className=" items-start py-3 font-medium  md:text-lg flex">Tags</h3>
-      <ul className="flex gap-3 flex-wrap">
+      <h3 className=" flex items-start py-3  font-medium md:text-lg">Tags</h3>
+      <ul className="flex flex-wrap gap-3">
         {tags.map((tag: Tag) => (
           <li
             className={cn(
-              " flex gap-1 cursor-pointer bg-gray-200 p-1.5 px-2 text-sm font-medium items-center  rounded-full",
+              " flex cursor-pointer items-center gap-1 rounded-full bg-gray-200 p-1.5 px-2 text-sm  font-normal",
               selectedTags.includes(tag) && " bg-green-200",
             )}
             key={tag}
@@ -45,7 +53,7 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, onTagSelected }) => {
           >
             <span>{tag}</span>
             {selectedTags.includes(tag) ? (
-              <TickFilledSvg className="h-4 w-4 text-green-600/50 z-10 " />
+              <TickFilledSvg className="z-10 h-4 w-4 text-green-600/50 " />
             ) : (
               <PlusFilledSvg className="h-4 w-4 text-gray-400" />
             )}
