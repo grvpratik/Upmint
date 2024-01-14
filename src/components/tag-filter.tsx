@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/libs/utils";
 import React, { useState } from "react";
-import { PlusFilledSvg, TickFilledSvg } from "./icons/svg";
+import { PlusFilledSvg, TagsFilledSvg, TickFilledSvg } from "./icons/svg";
 
 // Define the Tag type for the tags array
 type Tag = string;
@@ -37,15 +37,21 @@ const TagFilter: React.FC<TagFilterProps> = ({
       tags: newSelectedTags,
     });
   };
-  
+
   return (
     <div>
-      <h3 className=" flex items-start py-3  font-medium md:text-lg">Tags</h3>
+      <div>
+        <div className=" my-3  flex  items-center gap-2 py-1 font-medium md:text-lg">
+          {" "}
+          <span className=" text-gray-800"> Tags</span>{" "}
+          <TagsFilledSvg className="h-5 w-5  text-gray-800" />
+        </div>
+      </div>
       <ul className="flex flex-wrap gap-3">
         {tags.map((tag: Tag) => (
           <li
             className={cn(
-              " flex cursor-pointer items-center gap-1 rounded-full bg-gray-200 p-1.5 px-2 text-sm  font-normal",
+              " flex cursor-pointer items-center gap-1 rounded-full bg-gray-200 p-1 pl-3 pr-2 text-sm  font-normal",
               selectedTags.includes(tag) && " bg-green-200",
             )}
             key={tag}

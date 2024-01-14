@@ -4,6 +4,7 @@ import MarginX from "./margin-container";
 import CardWithBanner from "./card-banner";
 import TagFilter from "./tag-filter";
 import FilterSearch from "./filter-search";
+import FilterList from "./filter-list";
 
 const FilterClient = () => {
   
@@ -17,18 +18,17 @@ const FilterClient = () => {
     page: 1,
     tag:[]
   });
-  
+
 console.log(filter);
   return (
     <MarginX>
-      <div className="grid w-full grid-cols-10 gap-2">
-        <div className=" col-span-10 my-6 md:col-span-2">
+      <div className="grid w-full grid-cols-10 gap-2 ">
+        <div className=" col-span-10 my-6 md:col-span-2 flex flex-col gap-2">
           {" "}
           <FilterSearch filter={filter} setFilter={setFilter} />
+          <FilterList filter={filter} setFilter={setFilter} />
           <TagFilter
-            tags={[
-             "first","second","third"
-            ]}
+            tags={["first", "second", "third"]}
             filter={filter}
             onTagSelected={setFilter}
           />
