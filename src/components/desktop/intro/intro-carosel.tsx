@@ -31,10 +31,10 @@ const IntroCarosel = () => {
 			>
 				<button className="arrow-left  absolute  z-40   left-0 top-1/2">
 					{" "}
-					<ChevronLeftSvg className="p-1.5 h-8 w-8 bg-white rounded-r-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]" />
+					<ChevronLeftSvg className="p-1.5 h-8 w-8 bg-white rounded-r-full shadow-depth" />
 				</button>{" "}
 				<button className="arrow-right  absolute  z-40  right-0  top-1/2">
-					<ChevronRightSvg className="p-1.5  h-8 w-8 bg-white rounded-l-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]" />{" "}
+					<ChevronRightSvg className="p-1.5  h-8 w-8 bg-white rounded-l-full shadow-depth" />{" "}
 				</button>
 				<SwiperSlide>
 					<IntroSquareCard

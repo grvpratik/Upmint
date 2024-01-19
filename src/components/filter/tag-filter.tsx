@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/libs/utils";
 import React, { useState } from "react";
-import { PlusFilledSvg, TagsFilledSvg, TickFilledSvg } from "./icons/svg";
+import { PlusFilledSvg, TagsFilledSvg, TickFilledSvg } from "../icons/svg";
 
 // Define the Tag type for the tags array
 type Tag = string;

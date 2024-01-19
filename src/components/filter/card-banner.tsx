@@ -1,19 +1,20 @@
-import OptImage from "./ui/optimised-image";
+import OptImage from "../ui/optimised-image";
 
-import React from 'react'
+import React from "react";
 
-const CardWithBanner = () => {
+const CardWithBanner = ({ data }:any) => {
+  const { name, bannerUrl, imageUrl } = data;
   return (
-    <div className=" relative flex  max-w-[24rem] flex-col overflow-hidden  rounded-lg">
+    <div className=" relative flex  max-w-[38rem] flex-col overflow-hidden  rounded-lg shadow-depth">
       <OptImage
         className=" aspect-video h-full  w-full flex-1"
-        src="https://pbs.twimg.com/profile_banners/1700921224673538048/1703362204/1500x500"
-        alt=""
+        src={bannerUrl}
+        alt={name}
       />
 
       <div className=" flex w-full flex-col ">
-        <div className=" line-clamp-1 flex items-center p-2 py-3 text-left text-lg font-semibold leading-none">
-          name here
+        <div className="  line-clamp-1 flex items-center p-2 py-3 text-left text-lg font-bold leading-none">
+          {name}
         </div>
         <div className="flex">
           <div className="flex flex-1 flex-col p-2">
@@ -28,6 +29,6 @@ const CardWithBanner = () => {
       </div>
     </div>
   );
-}
+};
 
-export default CardWithBanner
+export default CardWithBanner;

@@ -24,7 +24,7 @@ export default function FilterList({ filter, setFilter }: SetFilterProps) {
     });
   };
   return (
-    <div className=" z-10  w-full min-w-[14rem] ">
+    <div className=" z-10  w-full min-w-[1rem] ">
       <Listbox value={selected} onChange={handleChange}>
         <div className="relative">
           <Listbox.Button className="border-border border-borderColor relative w-full cursor-default rounded-lg  border  border-solid bg-white/10 py-2 pl-3 pr-10 text-left text-sm shadow-sm hover:bg-white/5  focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">

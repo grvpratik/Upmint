@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 
-
-
-import FilterArea from "@/components/filter-client";
+import FilterArea from "@/components/filter/filter-client";
 import OptImage from "@/components/ui/optimised-image";
-import FilterClient from "@/components/filter-client";
+import FilterClient from "@/components/filter/filter-client";
 
 const TrendingPage = () => {
- 
- 
-  
-
   return (
     <>
       <div className="relative top-0 w-full  overflow-hidden rounded-b-xl ">
@@ -23,7 +17,7 @@ const TrendingPage = () => {
           alt={""}
         />
       </div>
-		 <FilterClient/>
+      <FilterClient />
     </>
   );
 };

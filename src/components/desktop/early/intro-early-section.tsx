@@ -34,8 +34,8 @@ const IntroEarlySection = () => {
   return (
     <div className="my-4 flex flex-col">
       <MarginX>
-        <div className="head flex min-h-0 justify-between rounded-xl py-4 ">
-          <div className=" font-montserrat text-xl font-semibold md:text-2xl lg:text-3xl">
+        <div className="head flex min-h-0 items-center justify-between rounded-xl  py-4">
+          <div className=" font-montserrat text-2xl font-bold  ">
             Early Projects
           </div>
           <div className="flex items-center gap-2">

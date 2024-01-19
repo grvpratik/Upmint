@@ -14,13 +14,14 @@ const getProjects = async (query: any) => {
 		enddate: query.enddate,
 		items: query.items,
 		date: query.date,
+		tags:query.tags
 	};
 
 	const url = qs.stringifyUrl({
 		url: URL,
 		query: queryParams,
 	});
-
+   console.log(url)
 	try {
 		const res = await axios.get(url, {
 			headers: {

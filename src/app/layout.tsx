@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={cn("antialiased", montserrat.variable, outfit.variable, inter.variable)}>
+			<body className={cn("antialiased ", montserrat.variable, outfit.variable, inter.variable)}>
 				<QueryProvider>{children}</QueryProvider>
 			</body>
 		</html>

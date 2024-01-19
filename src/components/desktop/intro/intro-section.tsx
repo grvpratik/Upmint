@@ -9,10 +9,10 @@ import IntroFeatured from "./intro-featured";
 
 const IntroHeading = ({ title }: { title: string }) => {
 	return (
-		<h1 className=" opacity-90 md:text-2xl text-xl lg:text-3xl font-semibold py-3 md:h-10 h-8 lg:h-14 flex items-center justify-start text-left ">
-			<span>{title}</span>
-		</h1>
-	);
+    <h1 className=" flex h-8   items-center justify-start py-3  text-left font-montserrat  text-2xl font-bold  opacity-90 md:h-10 lg:h-14 ">
+      <span>{title}</span>
+    </h1>
+  );
 };
 const IntroSection = () => {
 	return (

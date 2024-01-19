@@ -13,7 +13,7 @@ export interface OptimizedImageProps {
 const OptImage = ({ src, alt,className }:OptimizedImageProps) => {
 	const [imageSrc, setImageSrc] = useState(src);
 
-    const errorImg = "/";
+    const errorImg = "/image-placeholder.png";
 	return (
 		<div>
 			<div className={cn("relative ",className)}>

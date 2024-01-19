@@ -19,7 +19,7 @@ export function MainNav({
 				<span>Explore</span>
 				<HalfArrowDownSvg className="h-3 w-3 ml-1.5  group-hover:rotate-180 transition-all duration-150 ease-in-out" />
 				<div className="absolute rounded-xl scale-0 w-32 group-hover:scale-100 group-hover:block inline-block transition-all duration-500  left-0 pt-2 top-full ">
-					<div className="flex w-full rounded-xl font-semibold   bg-white flex-col  p-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] ">
+					<div className="flex w-full rounded-xl font-semibold   bg-white flex-col  p-2 shadow-depth">
 						<Link
 							href={"/trending"}
 							className="p-2.5 cursor-pointer rounded-lg flex gap-1 items-center hover:bg-gray-100"
