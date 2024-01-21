@@ -1,12 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import MarginX from "../margin-container";
-import CardWithBanner from "./card-banner";
-import TagFilter from "./tag-filter";
-import FilterSearch from "./filter-search";
-import FilterList from "./filter-list";
-import getProjects from "@/actions/getProjects";
 import { useQuery } from "react-query";
+
+import MarginX from "@/components/margin-container";
+import Button from "@/components/ui/Button";
+import getProjects from "@/actions/getProjects";
+import CircleIncidator from "@/components/loaders/circle-indicator";
+
+import CardWithBanner from "@/components/filter/card-banner";
+import TagFilter from "@/components/filter/tag-filter";
+import FilterSearch from "@/components/filter/filter-search";
+import FilterList from "@/components/filter/filter-list";
+import CardLoading from "@/components/filter/card-loading";
 
 const FilterClient = () => {
   const [fetchedData, setFetchedData] = useState([]);
@@ -19,45 +24,55 @@ const FilterClient = () => {
     page: 1,
     tags: [],
   });
-  const itemsPerPage: number = 10;
-  // UseQuery hook for fetching data
+  const itemsPerPage: number = 8;
 
   const fetchResult = async () => {
-    const tagString = filter.tags.join(",");
-    // Build query parameters
-    const arr: any = { ...filter, tags: tagString };
-    console.log(arr, "arr");
-    // Make API request to get collection data
-    const result = await getProjects(arr);
-    const filteredCount = result.total;
-    const filteredData = result.result;
+    try {
+      const tagString = filter.tags.join(",");
+      const result = await getProjects({ ...filter, tags: tagString });
 
-    // Calculate last page
-    const lastPageCount = Math.ceil(filteredCount / itemsPerPage);
-    setLastPage(lastPageCount);
+      const { total: filteredCount, result: filteredData } = result;
 
-    // Update collection data based on pagination
-    setFetchedData((prev: any) =>
-      filter.page === 1 ? filteredData : [...prev, ...filteredData],
-    );
+      const lastPageCount = Math.ceil(filteredCount / itemsPerPage);
+      setLastPage(lastPageCount);
 
-    // Return data and count
-    return { filteredData, filteredCount };
+      setFetchedData((prev: any) =>
+        filter.page === 1 ? filteredData : [...prev, ...filteredData],
+      );
+
+      return { filteredData, filteredCount };
+    } catch (error) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    }
   };
 
-  
   const { isLoading, error } = useQuery({
     queryKey: [{ filter }],
-
     queryFn: fetchResult,
   });
 
-  console.log(filter.tags);
+  const loadMore = () => {
+    setFilter({
+      ...filter,
+      page: filter.page + 1,
+    });
+  };
+
+  const loadMoreButton = (
+    <Button.Primary
+      onClick={loadMore}
+      className="disabled:opacity-50"
+      disabled={isLoading}
+    >
+      {isLoading && <CircleIncidator />}
+      <span>{isLoading ? "Loading..." : "Load More"}</span>
+    </Button.Primary>
+  );
+
   return (
     <MarginX>
-      <div className="grid w-full grid-cols-10 gap-2 ">
-        <div className=" col-span-10 my-6 flex flex-col gap-2 md:col-span-2">
-          {" "}
+      <div className="grid w-full grid-cols-10 gap-2">
+        <div className="col-span-10 my-6 flex flex-col gap-2 md:col-span-2">
           <FilterSearch filter={filter} setFilter={setFilter} />
           <FilterList filter={filter} setFilter={setFilter} />
           <TagFilter
@@ -66,21 +81,23 @@ const FilterClient = () => {
             onTagSelected={setFilter}
           />
         </div>
-        <div className=" col-span-10 md:col-span-8">
-          {" "}
-          <div className="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+        <div className="col-span-10 flex flex-col items-center justify-center gap-2 md:col-span-8">
+          <div className="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {isLoading && filter.page === 1 ? (
-              <div>loading..</div>
+              <CardLoading numberOfCards={12} />
             ) : fetchedData && fetchedData.length > 0 ? (
               fetchedData.map((data, index: number) => (
                 <CardWithBanner data={data} key={data?._id} />
               ))
             ) : (
-              <div className="col-span-full flex h-[30rem] w-full items-center justify-center">
-                not found
+              <div className="col-span-full flex  w-full items-center justify-center">
+                Not found
               </div>
             )}
           </div>
+          {!!lastPage && filter.page !== lastPage && (
+            <div className="my-4">{loadMoreButton}</div>
+          )}
         </div>
       </div>
     </MarginX>

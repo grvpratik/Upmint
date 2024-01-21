@@ -7,7 +7,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="relative flex flex-col scroll-smooth font-inter antialiased ">
       <MobileNav />
-      <Nav className=" backdrop-blur-sm" />
+      <Nav className=" backdrop-blur-sm " />
       {children}
       <Footer />
     </main>

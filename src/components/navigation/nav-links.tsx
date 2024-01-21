@@ -18,25 +18,25 @@ export function MainNav({
 			<div className="group relative text-sm p-1.5  rounded-md transition-all duration-200 px-2  hover:bg-gray-100/50 ease-in-out flex items-center">
 				<span>Explore</span>
 				<HalfArrowDownSvg className="h-3 w-3 ml-1.5  group-hover:rotate-180 transition-all duration-150 ease-in-out" />
-				<div className="absolute rounded-xl scale-0 w-32 group-hover:scale-100 group-hover:block inline-block transition-all duration-500  left-0 pt-2 top-full ">
-					<div className="flex w-full rounded-xl font-semibold   bg-white flex-col  p-2 shadow-depth">
+				<div className="absolute rounded-xl scale-0  w-36 group-hover:scale-100 group-hover:block inline-block transition-all duration-500  left-0 pt-2 top-full ">
+					<div className="flex w-full rounded-xl font-semibold gap-2  bg-white flex-col  p-2 shadow-depth">
 						<Link
 							href={"/trending"}
-							className="p-2.5 cursor-pointer rounded-lg flex gap-1 items-center hover:bg-gray-100"
+							className="p-2.5 cursor-pointer rounded-lg flex gap-2 items-center hover:bg-gray-100"
 						>
 							<span>
 								<TrendingIconSvg className="h-5 w-5" />
 							</span>
-							<span>Trending</span>
+							<span>Trending Projects</span>
 						</Link>
 						<Link
 							href={"/early"}
-							className="p-2.5 cursor-pointer rounded-lg flex gap-1 items-center hover:bg-gray-100"
+							className="p-2.5 cursor-pointer rounded-lg flex gap-2 items-center hover:bg-gray-100 "
 						>
 							<span>
 								<LatestIconSvg className="h-5 w-5" />
 							</span>
-							<span>Early</span>
+							<span>Early Projects</span>
 						</Link>
 					</div>
 				</div>

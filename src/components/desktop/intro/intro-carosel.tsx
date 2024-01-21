@@ -42,7 +42,7 @@ const IntroCarosel = () => {
 							"https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
 						}
 						alt=""
-						name=" the Title here"
+						name=" Title here"
 						muted="some sort name"
 					/>
 				</SwiperSlide>{" "}
@@ -52,7 +52,7 @@ const IntroCarosel = () => {
 							"https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
 						}
 						alt=""
-						name=" the Title here"
+						name=" Title here"
 						muted="some sort name"
 					/>
 				</SwiperSlide>{" "}
@@ -62,7 +62,7 @@ const IntroCarosel = () => {
 							"https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
 						}
 						alt=""
-						name=" the Title here"
+						name=" Title here"
 						muted="some sort name"
 					/>
 				</SwiperSlide>{" "}
@@ -72,7 +72,7 @@ const IntroCarosel = () => {
 							"https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
 						}
 						alt=""
-						name=" the Title here"
+						name=" Title here"
 						muted="some sort name"
 					/>
 				</SwiperSlide>

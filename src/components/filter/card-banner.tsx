@@ -1,11 +1,12 @@
+import Link from "next/link";
 import OptImage from "../ui/optimised-image";
 
 import React from "react";
 
 const CardWithBanner = ({ data }:any) => {
-  const { name, bannerUrl, imageUrl } = data;
+  const { name, bannerUrl,  } = data;
   return (
-    <div className=" relative flex  max-w-[38rem] flex-col overflow-hidden  rounded-lg shadow-depth">
+    <Link href={''} className=" relative flex  max-w-[38rem] flex-col overflow-hidden  rounded-lg shadow-depth">
       <OptImage
         className=" aspect-video h-full  w-full flex-1"
         src={bannerUrl}
@@ -27,7 +28,7 @@ const CardWithBanner = ({ data }:any) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
