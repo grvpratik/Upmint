@@ -52,7 +52,7 @@ const IntroEarlySection = () => {
             >
               <ChevronRightSvg className="h-6 w-6" />
             </div>{" "}
-            <Button.Secondary className=" rounded-xl">
+            <Button.Secondary className="">
               view all
             </Button.Secondary>
           </div>
