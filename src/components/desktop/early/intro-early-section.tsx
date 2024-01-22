@@ -41,13 +41,13 @@ const IntroEarlySection = () => {
           <div className="flex items-center gap-2">
             {" "}
             <div
-              className=" border-1 cursor-pointer rounded-xl border-solid bg-gray-100 p-2 transition  duration-150 hover:scale-95 hover:bg-gray-200"
+              className=" border-1 cursor-pointer rounded-xl border-solid bg-gray-100/10 p-2 transition  duration-75 hover:scale-95 hover:bg-gray-200/10"
               onClick={() => navigation("left")}
             >
               <ChevronLeftSvg className="h-6 w-6" />
             </div>
             <div
-              className=" border-1 cursor-pointer  rounded-xl  border-solid bg-gray-100 p-2 transition duration-150 hover:scale-95 hover:bg-gray-300"
+              className=" border-1 cursor-pointer  rounded-xl  border-solid bg-gray-100/10 p-2 transition duration-75 hover:scale-95 hover:bg-gray-300/10"
               onClick={() => navigation("right")}
             >
               <ChevronRightSvg className="h-6 w-6" />

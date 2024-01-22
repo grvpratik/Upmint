@@ -50,7 +50,7 @@ export const LatestIconSvg: React.FC<IconProps> = (props) => {
       baseProfile="full"
       enableBackground="new 0 0 76.00 76.00"
       xmlSpace="preserve"
-      fill="#000000"
+      fill="currentColor"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth={0} />
       <g
@@ -61,7 +61,7 @@ export const LatestIconSvg: React.FC<IconProps> = (props) => {
       <g id="SVGRepo_iconCarrier">
         {" "}
         <path
-          fill="#000000"
+          fill="currentColor"
           fillOpacity={1}
           strokeWidth="0.2"
           strokeLinejoin="round"
@@ -75,7 +75,7 @@ export const LatestIconSvg: React.FC<IconProps> = (props) => {
 export const TrendingIconSvg: React.FC<IconProps> = (props) => {
   return (
     <svg
-      fill="#000"
+      fill="currentColor"
       width="64px"
       height="64px"
       viewBox="0 0 256 256"
@@ -224,7 +224,7 @@ export const TwitterXSvg: React.FC<IconProps> = (props) => {
       <g clipPath="url(#clip0_84_15698)">
         <rect width="512" height="512" fill="none" rx="60"></rect>
         <path
-          fill="#000"
+          fill="currentColor"
           d="M355.904 100h52.928L293.2 232.16 429.232 412H322.72l-83.424-109.072L143.84 412H90.88l123.68-141.36L84.065 100H193.28l75.408 99.696L355.904 100zm-18.576 280.32h29.328L177.344 130.016h-31.472L337.328 380.32z"
         ></path>
       </g>

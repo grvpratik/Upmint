@@ -43,16 +43,17 @@ const TagFilter: React.FC<TagFilterProps> = ({
       <div>
         <div className=" my-3  flex  items-center gap-2 py-1 font-medium md:text-lg">
           {" "}
-          <span className=" text-gray-800"> Tags</span>{" "}
-          <TagsFilledSvg className="h-5 w-5  text-gray-800" />
+          <span className=" text-gray-800 dark:text-gray-100"> Tags</span>{" "}
+          <TagsFilledSvg className="h-5 w-5  " />
         </div>
       </div>
       <ul className="flex flex-wrap gap-3">
         {tags.map((tag: Tag) => (
           <li
             className={cn(
-              " flex cursor-pointer items-center gap-1 rounded-full bg-gray-200 p-1 pl-3 pr-2 text-sm  font-normal",
-              selectedTags.includes(tag) && " bg-green-200",
+              " flex cursor-pointer items-center gap-1 rounded-full bg-gray-200 p-1 pl-3 pr-2 text-sm font-normal  dark:bg-gray-300/20",
+              selectedTags.includes(tag) &&
+                " bg-green-200 dark:bg-green-400/50",
             )}
             key={tag}
             onClick={() => handleTagClick(tag)}

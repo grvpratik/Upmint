@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const IntroFeatured = () => {
   return (
-    <div className=" hidden max-h-[34rem] gap-3 sm:grid sm:grid-cols-1 md:grid-cols-2 md:gap-4  lg:gap-6">
+    <div className=" hidden max-h-[34rem] gap-3 sm:grid sm:grid-cols-1 md:grid-cols-2 md:gap-4   lg:gap-6">
       <div className=" hidden w-full grid-cols-1 gap-3 sm:grid md:gap-4 lg:gap-6">
         <Link href={""}>
           <div className="relative  aspect-square w-full rounded-2xl  bg-[#5562ea] ">

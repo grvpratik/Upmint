@@ -16,8 +16,8 @@ const IntroSquareCard = ({ src, alt, name, muted }: IntroCardProps) => {
         src={src}
         alt={alt}
       />
-      <div className="absolute inset-0 flex flex-col items-start justify-start  p-4 md:p-6 lg:p-8">
-        <div className=" f dark:text-whiteline-clamp-1 text-2xl font-bold tracking-tight text-gray-200  opacity-90">
+      <div className="absolute inset-0 flex flex-col items-start justify-start  p-3 md:p-4 lg:p-6">
+        <div className=" f dark:text-whiteline-clamp-1 text-lg lg:text-xl font-bold tracking-tight text-gray-200  opacity-90">
           {name}
         </div>
         <div className="font-normal text-gray-200 opacity-75">

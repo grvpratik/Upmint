@@ -13,6 +13,8 @@ import FilterSearch from "@/components/filter/filter-search";
 import FilterList from "@/components/filter/filter-list";
 import CardLoading from "@/components/filter/card-loading";
 
+const ITEM_PER_PAGE: number = 8;
+
 const FilterClient = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [lastPage, setLastPage] = useState<number>(0);
@@ -24,7 +26,6 @@ const FilterClient = () => {
     page: 1,
     tags: [],
   });
-  const itemsPerPage: number = 8;
 
   const fetchResult = async () => {
     try {
@@ -33,7 +34,7 @@ const FilterClient = () => {
 
       const { total: filteredCount, result: filteredData } = result;
 
-      const lastPageCount = Math.ceil(filteredCount / itemsPerPage);
+      const lastPageCount = Math.ceil(filteredCount / ITEM_PER_PAGE);
       setLastPage(lastPageCount);
 
       setFetchedData((prev: any) =>
@@ -83,9 +84,9 @@ const FilterClient = () => {
         </div>
         <div className="col-span-10 flex flex-col items-center justify-center gap-2 md:col-span-8">
           <div className="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {isLoading && filter.page === 1 ? (
+            {(isLoading && filter.page === 1) ? (
               <CardLoading numberOfCards={12} />
-            ) : fetchedData && fetchedData.length > 0 ? (
+            ) : (fetchedData && fetchedData.length > 0) ? (
               fetchedData.map((data, index: number) => (
                 <CardWithBanner data={data} key={data?._id} />
               ))

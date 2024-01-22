@@ -22,7 +22,7 @@ const IntroTrendSection = async () => {
             Trending Projects
           </div>
           <Link href={"/trending"}>
-            <Button.Secondary className=" rounded-xl">
+            <Button.Secondary className=" rounded-xl ">
               view all
             </Button.Secondary>
           </Link>

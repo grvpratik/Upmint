@@ -26,7 +26,7 @@ const IntroPosts = () => {
           />
 
           <div className="my-1 flex  flex-col gap-1 ">
-            <span className="line-clamp-2 text-base font-semibold leading-tight text-gray-800">
+            <span className="line-clamp-2 text-base font-semibold leading-tight ">
               How to start 💸 earnging from crypto 🏦 without investment
             </span>
             <span className="  line-clamp-1 text-xs leading-4  opacity-70">

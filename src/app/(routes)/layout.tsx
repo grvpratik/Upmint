@@ -4,7 +4,7 @@ import React from "react";
 
 const RouteLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<main className="flex relative flex-col scroll-smooth antialiased  bg-slate-50 ">
+		<main className="flex relative flex-col scroll-smooth antialiased   ">
 			<MobileNav className=" bg-transparent fixed backdrop-blur-0 font-mono z-30" />
 			<Nav className=" bg-transparent fixed backdrop-blur-0 font-mono" />
 			{children}

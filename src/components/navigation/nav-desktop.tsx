@@ -5,6 +5,7 @@ import SearchData from "@/components/search/search-data";
 import { MainNav } from "@/components/navigation/nav-links";
 import MarginX from "@/components/margin-container";
 import { cn } from "@/libs/utils";
+import Button from "@/components/ui/Button";
 
 const Nav = ({ className }: { className?: string }) => {
 	return (
@@ -27,9 +28,9 @@ const Nav = ({ className }: { className?: string }) => {
 						</div>
 					</div>
 					<div className="flex justify-end relative">
-						<button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl p-2 pl-5 pr-5 font-bold transition active:scale-95 duration-300 ease-in-out hover:ring-2 ring-offset-2 ring-blue-600">
+						<Button.Primary className="">
 							Primary
-						</button>
+						</Button.Primary>
 					</div>
 				</nav>
 			</MarginX>
