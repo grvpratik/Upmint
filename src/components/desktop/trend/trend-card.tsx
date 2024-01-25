@@ -28,7 +28,7 @@ const MintTabCard = ({ data, index }: { data: any; index: number }) => {
   return (
     <Link
       className="rounded-lg transition-all duration-200 ease-in-out hover:bg-gray-500/10  "
-      href={`/mints/${slug}`}
+      href={`/projects/${slug}`}
     >
       <div className="mx-3 flex gap-4 py-2 ">
         <div className="flex items-center justify-end text-center">

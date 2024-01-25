@@ -1,5 +1,5 @@
-
 import { useQuery } from "react-query";
+
 import getProjects from "@/actions/getProjects";
 
 const SearchQuery = (searchValue: string, setResult: Function) => {

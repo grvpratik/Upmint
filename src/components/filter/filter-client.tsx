@@ -11,7 +11,8 @@ import CardWithBanner from "@/components/filter/card-banner";
 import TagFilter from "@/components/filter/tag-filter";
 import FilterSearch from "@/components/filter/filter-search";
 import FilterList from "@/components/filter/filter-list";
-import CardLoading from "@/components/filter/card-loading";
+import CardLoading from "@/components/loaders/card-loading";
+import { ProjectDetailProps } from "@/libs/types";
 
 const ITEM_PER_PAGE: number = 8;
 
@@ -42,7 +43,7 @@ const FilterClient = () => {
       );
 
       return { filteredData, filteredCount };
-    } catch (error) {
+    } catch (error:any) {
       throw new Error(`Error fetching data: ${error.message}`);
     }
   };
@@ -62,7 +63,7 @@ const FilterClient = () => {
   const loadMoreButton = (
     <Button.Primary
       onClick={loadMore}
-      className="disabled:opacity-50"
+      className="disabled:opacity-50 flex gap-1"
       disabled={isLoading}
     >
       {isLoading && <CircleIncidator />}
@@ -87,7 +88,7 @@ const FilterClient = () => {
             {(isLoading && filter.page === 1) ? (
               <CardLoading numberOfCards={12} />
             ) : (fetchedData && fetchedData.length > 0) ? (
-              fetchedData.map((data, index: number) => (
+              fetchedData.map((data:ProjectDetailProps, index: number) => (
                 <CardWithBanner data={data} key={data?._id} />
               ))
             ) : (

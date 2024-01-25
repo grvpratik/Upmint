@@ -1,8 +1,9 @@
 import React from 'react'
+import MarginX from './margin-container'
 
 const CallToAction = () => {
   return (
-    <div>CallToAction</div>
+    <MarginX><div>call</div></MarginX>
   )
 }
 

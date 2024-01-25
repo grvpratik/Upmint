@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,9 +11,18 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import IntroSquareCard from "./intro-square-card";
 import { ChevronLeftSvg, ChevronRightSvg } from "@/components/icons/svg";
+import { ProjectDetailProps } from "@/libs/types";
 
-const IntroCarosel = () => {
-	return (
+
+interface IntroCaroselProps{
+  data: ProjectDetailProps[] | null;
+  error: any;
+}
+
+const IntroCarosel = ({ data, error }:IntroCaroselProps) => {
+  // console.log("data", data);
+  console.log("error", error);
+  return (
     <>
       <Swiper
         className="relative w-full cursor-pointer rounded-2xl"
@@ -31,51 +40,24 @@ const IntroCarosel = () => {
       >
         <button className="arrow-left  absolute  left-0   top-1/2 z-40">
           {" "}
-          <ChevronLeftSvg className="h-8 w-8 rounded-r-full bg-gray-200 p-1.5 text-black shadow-depth" />
+          <ChevronLeftSvg className="h-8 w-8 rounded-r-full bg-gray-200 p-1.5 text-black shadow-depth transition-all active:p-2" />
         </button>{" "}
         <button className="arrow-right  absolute  right-0  top-1/2  z-40">
-          <ChevronRightSvg className="h-8  w-8 rounded-l-full bg-white p-1.5 text-black  shadow-depth" />{" "}
+          <ChevronRightSvg className="h-8  w-8 rounded-l-full bg-white p-1.5  text-black shadow-depth transition-all  active:p-2" />{" "}
         </button>
-        <SwiperSlide>
-          <IntroSquareCard
-            src={
-              "https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
-            }
-            alt=""
-            name=" Title here"
-            muted="some sort name"
-          />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <IntroSquareCard
-            src={
-              "https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
-            }
-            alt=""
-            name=" Title here"
-            muted="some sort name"
-          />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <IntroSquareCard
-            src={
-              "https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
-            }
-            alt=""
-            name=" Title here"
-            muted="some sort name"
-          />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <IntroSquareCard
-            src={
-              "https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
-            }
-            alt=""
-            name=" Title here"
-            muted="some sort name"
-          />
-        </SwiperSlide>
+        {data?.map((item:ProjectDetailProps) => (
+          <SwiperSlide key={item._id}>
+            <IntroSquareCard
+              src={
+                item.imageUrl ||
+                "https://pbs.twimg.com/profile_images/1724506817449852929/di5Sjh-Q.jpg"
+              }
+              alt=""
+              name={item.name || "Title here"}
+              muted={item.slug || "Some sort name"}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

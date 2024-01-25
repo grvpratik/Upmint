@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import useDebounce from "@/hooks/useDebounce";
 import { cn } from "@/libs/utils";
-import { SearchGlassSvg } from "../icons/svg";
+import { SearchGlassSvg } from "@/components/icons/svg";
 
 interface SearchInputProps {
 	setSearch: (value: string) => void;

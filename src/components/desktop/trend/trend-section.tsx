@@ -18,7 +18,7 @@ const IntroTrendSection = async () => {
     <section className="my-4 flex flex-col">
       <MarginX>
         <div className="flex w-full items-center justify-between py-4">
-          <div className="  font-montserrat text-2xl font-bold   ">
+          <div className="  font-montserrat text-lg md:text-2xl font-bold   ">
             Trending Projects
           </div>
           <Link href={"/trending"}>
@@ -27,7 +27,7 @@ const IntroTrendSection = async () => {
             </Button.Secondary>
           </Link>
         </div>
-        <div className=" grid grid-flow-row grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className=" grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {/* Render MintTabCard components based on earlyData */}
           {trendingData.length > 0 ? (
             trendingData.map((data: any, index: number) => (

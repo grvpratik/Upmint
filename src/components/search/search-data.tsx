@@ -77,6 +77,11 @@ const SearchData = () => {
       );
     }
   };
+
+
+
+
+  
   return (
     <div
       ref={searchDataRef}

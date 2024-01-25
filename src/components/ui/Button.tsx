@@ -28,7 +28,7 @@ const SecondaryButton: React.FC<ButtonProps> = ({
 }) => (
   <button
     className={cn(
-      "rounded bg-gray-200 bg-gray-300/10 px-3 py-1.5 font-medium dark:text-gray-200 text-gray-800 transition-all duration-100 ease-in-out  hover:bg-gray-300/50",
+      "flex rounded text-sm bg-gray-200 bg-gray-300/10 px-2 py-1 text-gray-800 transition-all duration-100 ease-in-out hover:bg-gray-300/50 md:px-3 md:py-1.5  dark:text-gray-200 ",
       className,
     )}
     {...props}

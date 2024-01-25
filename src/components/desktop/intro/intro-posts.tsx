@@ -11,7 +11,7 @@ const IntroPosts = () => {
       <div className=" flex w-full flex-col">
         {" "}
         <div className="flex  h-14 w-full items-center justify-between">
-          <h1 className="   font-montserrat text-2xl font-bold ">Posts</h1>
+          <h1 className="   font-montserrat text-lg md:text-2xl font-bold ">Posts</h1>
           <Link href={"/posts"}>
             <Button.Secondary className=" text-gray-600">
               view all

@@ -1,7 +1,9 @@
 import React from "react";
+import Link from "next/link";
+
+
 import IntroSquareCard from "./intro-square-card";
 import { DiscordSvg } from "@/components/icons/svg";
-import Link from "next/link";
 
 const IntroFeatured = () => {
   return (
@@ -13,7 +15,7 @@ const IntroFeatured = () => {
               join the discord
             </h1>
             <div className=" flex h-full w-full items-end justify-end">
-              <DiscordSvg className=" h-28 w-28 -rotate-45 pb-2" />
+              <DiscordSvg className=" h-28 w-28 pb-2" />
             </div>
           </div>
         </Link>
