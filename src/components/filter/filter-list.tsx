@@ -3,7 +3,6 @@ import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 
-
 const network = ["Solana", "Etherum", "Bitcoin"];
 
 type FilterProps = Object;
@@ -27,7 +26,7 @@ export default function FilterList({ filter, setFilter }: SetFilterProps) {
     <div className=" z-10  w-full min-w-[1rem] ">
       <Listbox value={selected} onChange={handleChange}>
         <div className="relative">
-          <Listbox.Button className="relative w-full  cursor-pointer rounded-lg border  border-solid  bg-white/10 py-2 pl-3 pr-10 text-left text-sm shadow-sm hover:bg-white/5 focus:outline-none  focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm dark:border-gray-800">
+          <Listbox.Button className="bg-overlay/10 hover:bg-overlay/5  relative w-full cursor-pointer  rounded-lg  border border-solid py-2 pl-3 pr-10 text-left text-sm shadow-sm focus:outline-none  focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 dark:border-gray-800 sm:text-sm">
             <span className="block truncate">{selected}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronDownIcon
@@ -42,7 +41,7 @@ export default function FilterList({ filter, setFilter }: SetFilterProps) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full  overflow-auto rounded-md bg-white py-1  text-sm shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full  overflow-auto rounded-md bg-overlay py-1  text-sm shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
               {network.map((person, personIdx) => (
                 <Listbox.Option
                   key={personIdx}

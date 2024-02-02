@@ -5,9 +5,12 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer aria-labelledby="footer-heading ">
+    <footer
+      className="w-full font-outfit text-cletter"
+      aria-labelledby="footer-heading "
+    >
       <MarginX>
-        <div className="grid w-full grid-cols-8 gap-4 py-4 md:gap-8 md:py-8">
+        <div className="grid w-full  grid-cols-8 gap-4 py-4 md:gap-8 md:py-8">
           <div className="col-span-full flex max-w-sm flex-col gap-4 md:col-span-4">
             <span
               aria-label="Go home"
@@ -15,17 +18,17 @@ export const Footer = () => {
               className="inline-flex items-center"
             >
               {/* logo */}
-              <span className="text-xl font-bold uppercase tracking-wide font-montserrat">
-              Upmint
+              <span className="font-montserrat text-xl font-bold uppercase tracking-wide">
+                Upmint
               </span>
             </span>
             <div className="mt-4 lg:max-w-sm">
-              <p className="text-sm opacity-70 dark:text-violet-200/75">
+              <p className="text-sm font-light  dark:text-violet-200/75">
                 Discover upcoming, trending, and daily minted NFTs all in one
                 place! Explore the newest drops, trending collections, and fresh
                 creations daily on our platform.
               </p>
-              <p className="mt-4 flex gap-2 text-sm opacity-70 dark:text-violet-200/75">
+              <p className="mt-4 flex gap-2 text-sm  dark:text-violet-200/75">
                 <Link
                   className="text-gray-700 transition hover:text-blue-400"
                   href=""
@@ -47,8 +50,8 @@ export const Footer = () => {
             </div>
           </div>
           <div className="col-span-4 md:col-span-2">
-            <span>Resources</span>
-            <div className="my-3 flex flex-col gap-3 text-sm opacity-75">
+            <span className=" text-base font-medium">Resources</span>
+            <div className="my-3 flex flex-col gap-3 text-sm font-light ">
               <span>
                 <Link href="#">Mints</Link>
               </span>
@@ -61,8 +64,8 @@ export const Footer = () => {
             </div>
           </div>
           <div className="col-span-4 md:col-span-2">
-            <span>Legal</span>
-            <div className="my-3 flex flex-col gap-3 text-sm opacity-75">
+            <span className=" text-base font-medium">Legal</span>
+            <div className="my-3 flex flex-col gap-3 text-sm font-light ">
               <span>
                 <Link href="#">Privacy</Link>
               </span>

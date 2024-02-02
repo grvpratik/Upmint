@@ -98,9 +98,7 @@ const MobileNav = ({ className }: { className?: string }) => {
       </header>
 
       {/* Search dropdown */}
-      <MobSearch
-        show={mobSearchToggle}
-        setShow={setMobSearchToggle } />
+      <MobSearch show={mobSearchToggle} setShow={setMobSearchToggle} />
       {/* Menu dropdown */}
       <Transition.Root
         className="fixed inset-0 z-40 flex w-full  items-end overflow-hidden backdrop-blur-sm md:hidden"
@@ -108,7 +106,7 @@ const MobileNav = ({ className }: { className?: string }) => {
       >
         <Transition.Child
           ref={menuRef}
-          className="z-50 flex w-full  flex-col rounded-t-3xl bg-white pb-8 pt-2 shadow-xl"
+          className="z-50 flex w-full  flex-col rounded-t-3xl bg-overlay pb-8 pt-2 shadow-xl"
           enter="transition-all ease-in-out duration-400"
           enterFrom="opacity-0 translate-y-full"
           enterTo="opacity-100 translate-y-0"

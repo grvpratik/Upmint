@@ -1,23 +1,29 @@
-
-
-
 import "@/styles/globals.css";
 import QueryProvider from "@/providers/query-provider";
 import { montserrat, outfit, inter } from "@/libs/font";
 import { cn } from "@/libs/utils";
-
-
+import { ThemeProvider } from "@/providers/theme-provider";
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang="en">
-			<body className={cn("antialiased text-gray-100 bg-slate-950 ", montserrat.variable, outfit.variable, inter.variable)}>
-				<QueryProvider>{children}</QueryProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body
+        className={cn(
+          "bg-cbackground text-cletter antialiased ",
+          montserrat.variable,
+          outfit.variable,
+          inter.variable,
+        )}
+      >
+        {" "}
+        <ThemeProvider>
+          <QueryProvider >{children}</QueryProvider>{" "}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }

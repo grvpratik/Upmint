@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import OptImage from "@/components/ui/optimised-image";
-import { TwitterXSvg } from "@/components/icons/svg";
 import { cn, nFormatter } from "@/libs/utils";
+import { TwitterXSvg } from "@/components/icons/svg";
+import OptImage from "@/components/ui/optimised-image";
 
 const IntroEarlyCard = ({ data }: any) => {
   if (!data) {
@@ -12,13 +12,13 @@ const IntroEarlyCard = ({ data }: any) => {
   const { name, description, network, imageUrl, currFollower, bannerUrl } =
     data;
   return (
-    <div className="card group relative mx-1 flex min-h-[4rem] min-w-[22rem] cursor-pointer  flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-solid border-gray-300 p-6 transition-all duration-150   ease-in-out   hover:border-[1.5px] lg:max-w-md dark:border-gray-800">
-      {/* <Image
+    <div className="card group relative mx-1 flex min-h-[4rem] min-w-[22rem] cursor-pointer flex-col  justify-between gap-4 overflow-hidden rounded-2xl border border-solid border-gray-300 p-6 shadow-depth   dark:border-gray-800 lg:max-w-md">
+      <Image
         src={bannerUrl}
         alt=""
         fill
-        className="-z-10 brightness-50 group-hover:blur-sm transition-all border-none"
-      /> */}
+        className=" -z-10 scale-50 border-none opacity-0 brightness-50 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100"
+      />
       <div className="flex items-center gap-2">
         <OptImage
           className="h-12 w-12 overflow-hidden rounded-xl"
@@ -31,7 +31,7 @@ const IntroEarlyCard = ({ data }: any) => {
           {name}
         </div>
       </div>
-      <div className=" line-clamp-3 font-inter text-sm leading-relaxed opacity-70">
+      <div className=" line-clamp-3 font-inter text-sm leading-relaxed  group-hover:text-white">
         {description}
       </div>
       <div className="flex items-center gap-2">

@@ -10,10 +10,13 @@ export interface OptimizedImageProps {
 	alt: string;
 	className: string;
 }
+
+ const ERROR_PLACEHOLDER_IMAGE = "/image-placeholder.png";
+
 const OptImage = ({ src, alt,className }:OptimizedImageProps) => {
 	const [imageSrc, setImageSrc] = useState(src);
 
-    const errorImg = "/image-placeholder.png";
+    
 	return (
 		<div>
 			<div className={cn("relative ",className)}>
@@ -23,10 +26,10 @@ const OptImage = ({ src, alt,className }:OptimizedImageProps) => {
 					
 					// placeholder="blur"
 					// blurDataURL="/alphanftslogo.png"
-					onError={() => setImageSrc(errorImg)}
+					onError={() => setImageSrc(ERROR_PLACEHOLDER_IMAGE)}
 					sizes="100%"
 					fill
-					className=" object-cover"
+					className=" object-cover object-center "
 				/>
 			</div>
 		</div>

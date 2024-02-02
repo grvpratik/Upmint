@@ -45,7 +45,7 @@ const IntroEarlySection = ({ data, error }: IntroEarlySectionProps) => {
     <div className="my-4 flex flex-col">
       <MarginX>
         <div className="head flex min-h-0 items-center justify-between rounded-xl  py-4">
-          <div className=" font-montserrat md:text-2xl font-bold  text-lg">
+          <div className=" px-1 py-2  font-montserrat text-lg font-bold  md:text-2xl">
             Early Projects
           </div>
           <div className="flex items-center gap-2">

@@ -5,12 +5,13 @@ import { Footer } from "@/components/footer/footer";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="relative flex flex-col scroll-smooth font-inter antialiased ">
+   <>
       <MobileNav />
       <Nav className=" backdrop-blur-sm " />
-      {children}
+       <section className="relative flex flex-col scroll-smooth font-inter antialiased ">
+      {children} </section>
       <Footer />
-    </main>
+   </>
   );
 };
 

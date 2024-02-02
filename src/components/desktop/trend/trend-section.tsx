@@ -18,7 +18,7 @@ const IntroTrendSection = async () => {
     <section className="my-4 flex flex-col">
       <MarginX>
         <div className="flex w-full items-center justify-between py-4">
-          <div className="  font-montserrat text-lg md:text-2xl font-bold   ">
+          <div className=" py-2 px-1 font-montserrat text-lg md:text-2xl font-bold   ">
             Trending Projects
           </div>
           <Link href={"/trending"}>

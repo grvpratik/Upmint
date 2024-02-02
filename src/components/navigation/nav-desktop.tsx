@@ -9,7 +9,7 @@ import Button from "@/components/ui/Button";
 
 const Nav = ({ className }: { className?: string }) => {
 	return (
-		<header className={cn("sticky top-0 z-50 w-full hidden md:block",className)}>
+		<header className={cn("sticky font-inter top-0 z-50 w-full hidden md:block",className)}>
 			<MarginX>
 				<nav className="flex items-center py-3 relative">
 					<div className="flex items-center ">

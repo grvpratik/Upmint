@@ -40,12 +40,12 @@ const IntroCarosel = ({ data, error }:IntroCaroselProps) => {
       >
         <button className="arrow-left  absolute  left-0   top-1/2 z-40">
           {" "}
-          <ChevronLeftSvg className="h-8 w-8 rounded-r-full bg-gray-200 p-1.5 text-black shadow-depth transition-all active:p-2" />
+          <ChevronLeftSvg className="h-8 w-8 rounded-r-full bg-gray-100 p-1.5 text-black shadow-depth transition-all active:p-2" />
         </button>{" "}
         <button className="arrow-right  absolute  right-0  top-1/2  z-40">
-          <ChevronRightSvg className="h-8  w-8 rounded-l-full bg-white p-1.5  text-black shadow-depth transition-all  active:p-2" />{" "}
+          <ChevronRightSvg className="h-8  w-8 rounded-l-full bg-gray-100 p-1.5  text-black shadow-depth transition-all  active:p-2" />{" "}
         </button>
-        {data?.map((item:ProjectDetailProps) => (
+        {data?.map((item: ProjectDetailProps) => (
           <SwiperSlide key={item._id}>
             <IntroSquareCard
               src={

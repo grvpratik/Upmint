@@ -4,11 +4,10 @@ import { Transition } from "@headlessui/react";
 import SearchData from "../search/search-data";
 import { CrossSvg } from "../icons/svg";
 
-interface MobSearchProps{
-    show: boolean;
-    setShow: any;
+interface MobSearchProps {
+  show: boolean;
+  setShow: any;
 }
-
 
 const MobSearch = ({ show, setShow }: MobSearchProps) => {
   return (
@@ -17,7 +16,7 @@ const MobSearch = ({ show, setShow }: MobSearchProps) => {
       show={show}
     >
       <Transition.Child
-        className="relative flex  w-full gap-2 bg-white px-1 py-2"
+        className="relative flex  w-full gap-2 bg-overlay px-1 py-2"
         enter="transition-all ease-in-out duration-100 "
         enterFrom="opacity-0 -translate-y-6"
         enterTo="opacity-100 translate-y-0"
@@ -34,8 +33,7 @@ const MobSearch = ({ show, setShow }: MobSearchProps) => {
           aria-controls="navbar-sticky"
           aria-expanded="false"
         >
-         
-          <CrossSvg className="h-6 w-6"/>
+          <CrossSvg className="h-6 w-6" />
         </button>
       </Transition.Child>
     </Transition.Root>

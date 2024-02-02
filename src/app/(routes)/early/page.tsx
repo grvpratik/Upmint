@@ -16,13 +16,13 @@ console.log(result,"result")
         <h1 className="text-4xl font-extrabold dark:text-white">
           Early Projects
         </h1>
-        <main className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {result ? (
             result.map((item:ProjectDetailProps) => <IntroEarlyCard key={item._id} data={item} />)
           ) : (
             <p>No early projects available.</p>
           )}
-        </main>
+        </section>
       </div>
     </MarginX>
   );
