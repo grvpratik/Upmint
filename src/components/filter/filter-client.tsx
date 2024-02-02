@@ -13,6 +13,7 @@ import FilterSearch from "@/components/filter/filter-search";
 import FilterList from "@/components/filter/filter-list";
 import CardLoading from "@/components/loaders/card-loading";
 import { ProjectDetailProps } from "@/libs/types";
+import { AxiosError } from "axios";
 
 const ITEM_PER_PAGE: number = 8;
 
@@ -43,8 +44,8 @@ const FilterClient = () => {
       );
 
       return { filteredData, filteredCount };
-    } catch (error:any) {
-      throw new Error(`Error fetching data: ${error.message}`);
+    } catch (error: any | AxiosError) {
+      throw new Error(`Error fetching data: ${error?.message}`);
     }
   };
 
@@ -63,7 +64,7 @@ const FilterClient = () => {
   const loadMoreButton = (
     <Button.Primary
       onClick={loadMore}
-      className="disabled:opacity-50 flex gap-1"
+      className="flex gap-1 disabled:opacity-50"
       disabled={isLoading}
     >
       {isLoading && <CircleIncidator />}
@@ -85,10 +86,10 @@ const FilterClient = () => {
         </div>
         <div className="col-span-10 flex flex-col items-center justify-center gap-2 md:col-span-8">
           <div className="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {(isLoading && filter.page === 1) ? (
+            {isLoading && filter.page === 1 ? (
               <CardLoading numberOfCards={12} />
-            ) : (fetchedData && fetchedData.length > 0) ? (
-              fetchedData.map((data:ProjectDetailProps, index: number) => (
+            ) : fetchedData && fetchedData.length > 0 ? (
+              fetchedData.map((data: ProjectDetailProps, index: number) => (
                 <CardWithBanner data={data} key={data?._id} />
               ))
             ) : (

@@ -21,7 +21,7 @@ export default function RootLayout({
       >
         {" "}
         <ThemeProvider>
-          <QueryProvider >{children}</QueryProvider>{" "}
+          <QueryProvider>{children}</QueryProvider>{" "}
         </ThemeProvider>
       </body>
     </html>

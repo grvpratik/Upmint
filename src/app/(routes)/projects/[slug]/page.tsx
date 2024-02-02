@@ -20,20 +20,22 @@ const ProjectDetailsPage = async ({
             src={mintDetails.bannerUrl}
             alt=""
           />{" "}
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <OptImage
               className="relative h-12 w-12 overflow-hidden rounded-full md:w-16 md:h-16"
               src={mintDetails.imageUrl}
               alt=""
             />
-            <div className="flex flex-col">
-              <div>{mintDetails.name}</div>
-              <div>{mintDetails.currFollower}</div>
+            <div className="flex flex-col items-center">
+              <div className=" font-semibold text-lg">{mintDetails.name}</div>
+              <div className=" font-light text-xs">{mintDetails.currFollower}</div>
             </div>
           </div>
           <div className=" grid grid-cols-1 md:grid-cols-2">
             {" "}
-            <div>image a</div>
+            <div>description:
+              <p>{mintDetails.description}</p>
+            </div>
             <div>nd detail</div>
           </div>
         </div>

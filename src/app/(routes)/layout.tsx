@@ -4,7 +4,7 @@ import Nav from "@/components/navigation/nav-desktop";
 import MobileNav from "@/components/navigation/nav-mobile";
 
 const RouteLayout = ({ children }: { children: React.ReactNode }) => {
-	return (
+  return (
     <>
       <MobileNav className=" sticky z-30 bg-transparent  backdrop-blur-0" />
       <Nav className="  sticky bg-transparent  backdrop-blur-0" />{" "}
