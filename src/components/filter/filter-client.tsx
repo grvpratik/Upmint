@@ -44,8 +44,8 @@ const FilterClient = () => {
       );
 
       return { filteredData, filteredCount };
-    } catch (error: any | AxiosError) {
-      throw new Error(`Error fetching data: ${error?.message}`);
+    } catch (error) {
+      throw new Error(`Error fetching data`);
     }
   };
 
