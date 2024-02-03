@@ -17,7 +17,7 @@ const IntroEarlyCard = ({ data }: any) => {
         src={bannerUrl}
         alt=""
         fill
-        className=" -z-10 scale-50 border-none opacity-0 brightness-50 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100"
+        className=" -z-10  border-none  brightness-50 transition-all ease-in-out duration-200  group-hover:scale-105"
       />
       <div className="flex items-center gap-2">
         <OptImage
