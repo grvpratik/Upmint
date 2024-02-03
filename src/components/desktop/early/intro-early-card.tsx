@@ -17,7 +17,7 @@ const IntroEarlyCard = ({ data }: any) => {
         src={bannerUrl}
         alt=""
         fill
-        className=" -z-10  border-none  brightness-50 transition-all ease-in-out duration-200  group-hover:scale-105"
+        className=" transition-all  -z-10  border-none brightness-50  group-hover:scale-105"
       />
       <div className="flex items-center gap-2">
         <OptImage
@@ -26,12 +26,12 @@ const IntroEarlyCard = ({ data }: any) => {
           alt=""
         />
 
-        <div className=" line-clamp-1 font-montserrat text-xl font-semibold  leading-6">
+        <div className=" line-clamp-1 font-montserrat text-xl font-semibold text-white leading-6">
           {" "}
           {name}
         </div>
       </div>
-      <div className=" line-clamp-3 font-inter text-sm leading-relaxed  group-hover:text-white">
+      <div className=" line-clamp-3 font-inter text-sm leading-relaxed  text-white">
         {description}
       </div>
       <div className="flex items-center gap-2">

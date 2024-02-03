@@ -6,12 +6,14 @@ import OptImage from "@/components/ui/optimised-image";
 import Button from "@/components/ui/Button";
 
 const IntroPosts = () => {
-	return (
+  return (
     <>
       <div className=" flex w-full flex-col">
         {" "}
         <div className="flex  h-14 w-full items-center justify-between">
-          <h1 className="   font-montserrat text-lg md:text-2xl font-bold ">Posts</h1>
+          <h1 className="   font-montserrat text-lg font-bold md:text-2xl ">
+            Posts
+          </h1>
           <Link href={"/posts"}>
             <Button.Secondary className=" text-gray-600">
               view all
@@ -25,8 +27,8 @@ const IntroPosts = () => {
             alt=""
           />
 
-          <div className="my-1 flex  flex-col gap-1 ">
-            <span className="line-clamp-2 text-base font-semibold leading-tight ">
+          <div className="my-1 flex  flex-col md:gap-1 gap-1.5 ">
+            <span className="line-clamp-2 text-sm font-semibold leading-tight md:text-base ">
               How to start 💸 earnging from crypto 🏦 without investment
             </span>
             <span className="  line-clamp-1 text-xs leading-4  opacity-70">

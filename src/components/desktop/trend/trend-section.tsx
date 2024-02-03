@@ -27,7 +27,7 @@ const IntroTrendSection = async () => {
             </Button.Secondary>
           </Link>
         </div>
-        <div className=" grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className=" grid grid-flow-row grid-cols-1 gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
           {/* Render MintTabCard components based on earlyData */}
           {trendingData.length > 0 ? (
             trendingData.map((data: any, index: number) => (

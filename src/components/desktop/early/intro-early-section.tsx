@@ -51,16 +51,16 @@ const IntroEarlySection = ({ data, error }: IntroEarlySectionProps) => {
           <div className="flex items-center gap-2">
             {" "}
             <div
-              className=" border-1 cursor-pointer rounded border-solid bg-gray-100/10 p-1.5 transition  duration-75 hover:scale-95 hover:bg-gray-200/10"
+              className=" border-1 cursor-pointer rounded border-solid bg-gray-300/25 shadow-depth p-1.5 transition  duration-75 hover:scale-95 hover:bg-gray-300/25"
               onClick={() => navigation("left")}
             >
-              <ChevronLeftSvg className="h-6 w-6" />
+              <ChevronLeftSvg className="h-5 w-5" />
             </div>
             <div
-              className=" border-1 cursor-pointer  rounded  border-solid bg-gray-100/10 p-1.5 transition duration-75 hover:scale-95 hover:bg-gray-300/10"
+              className=" border-1 cursor-pointer  rounded  border-solid bg-gray-300/25 shadow-depth p-1.5 transition duration-75 hover:scale-95 hover:bg-gray-300/25 "
               onClick={() => navigation("right")}
             >
-              <ChevronRightSvg className="h-6 w-6" />
+              <ChevronRightSvg className="h-5 w-5" />
             </div>{" "}
             <Button.Secondary className="">view all</Button.Secondary>
           </div>
