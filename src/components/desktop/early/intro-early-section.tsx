@@ -1,11 +1,13 @@
 "use client";
-import { ChevronLeftSvg, ChevronRightSvg } from "@/components/icons/svg";
-import MarginX from "@/components/margin-container";
-import Image from "next/image";
 import React, { RefObject, useRef } from "react";
-import IntroEarlyCard from "./intro-early-card";
-import Button from "@/components/ui/Button";
+import Image from "next/image";
+
 import { ProjectDetailProps } from "@/libs/types";
+
+import Button from "@/components/ui/Button";
+import IntroEarlyCard from "./intro-early-card";
+import MarginX from "@/components/margin-container";
+import { ChevronLeftSvg, ChevronRightSvg } from "@/components/icons/svg";
 
 interface IntroEarlySectionProps {
   data: ProjectDetailProps[] | null;
