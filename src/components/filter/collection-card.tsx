@@ -8,7 +8,7 @@ const CollectionCard = ({ data }: any) => {
   return (
     <Link
       href={""}
-      className=" relative flex w-full  sm:max-w-[38rem] flex-col overflow-hidden  rounded-lg shadow-depth"
+      className=" relative flex w-full  md:max-w-[38rem] flex-col overflow-hidden  rounded-lg shadow-depth"
     >
       <OptImage
         className=" aspect-video h-full  w-full flex-1"

@@ -6,7 +6,7 @@ const CardLoading = ({ numberOfCards = 4 }: { numberOfCards: number }) => {
     <div
       key={index}
       role="status"
-      className="grid min-h-[225px] min-w-[22em] max-w-[38rem] grid-cols-1 grid-rows-5  overflow-hidden   rounded-lg shadow-depth  "
+      className="grid min-h-[225px] min-w-full md:min-w-[17rem] md:max-w-[38rem] grid-cols-1 grid-rows-5  overflow-hidden   rounded-lg shadow-depth  "
     >
       <div className="row-span-3 animate-pulse bg-gray-400"></div>
       <div className="row-span-2 flex flex-col gap-2  p-4">
