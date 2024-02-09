@@ -3,12 +3,12 @@ import OptImage from "../ui/optimised-image";
 
 import React from "react";
 
-const CardWithBanner = ({ data }: any) => {
+const CollectionCard = ({ data }: any) => {
   const { name, bannerUrl } = data;
   return (
     <Link
       href={""}
-      className=" relative flex  max-w-[38rem] flex-col overflow-hidden  rounded-lg shadow-depth"
+      className=" relative flex w-full  sm:max-w-[38rem] flex-col overflow-hidden  rounded-lg shadow-depth"
     >
       <OptImage
         className=" aspect-video h-full  w-full flex-1"
@@ -35,4 +35,4 @@ const CardWithBanner = ({ data }: any) => {
   );
 };
 
-export default CardWithBanner;
+export default CollectionCard;

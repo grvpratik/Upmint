@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 import getProjects from "@/actions/getProjects";
 import CircleIncidator from "@/components/loaders/circle-indicator";
 
-import CardWithBanner from "@/components/filter/card-banner";
+import CardWithBanner from "@/components/filter/collection-card";
 import TagFilter from "@/components/filter/tag-filter";
 import FilterSearch from "@/components/filter/filter-search";
 import FilterList from "@/components/filter/filter-list";

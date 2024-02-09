@@ -12,12 +12,12 @@ const IntroEarlyCard = ({ data }: any) => {
   const { name, description, network, imageUrl, currFollower, bannerUrl } =
     data;
   return (
-    <div className="card group relative mx-1 flex min-h-[4rem] min-w-[22rem] cursor-pointer flex-col  justify-between gap-4 overflow-hidden rounded-2xl border border-solid border-gray-300 p-6 shadow-depth   dark:border-gray-800 lg:max-w-md">
+    <div className="card group transition-all  relative mx-1 flex min-h-[4rem] min-w-[22rem] cursor-pointer flex-col  justify-between gap-4 overflow-hidden rounded-2xl border border-solid border-gray-300 p-6 shadow-depth   dark:border-gray-800 lg:max-w-md">
       <Image
         src={bannerUrl}
         alt=""
         fill
-        className=" transition-all  -z-10  border-none brightness-50  group-hover:scale-105"
+        className=" transition-all duration-300  -z-10  border-none brightness-50  group-hover:scale-105"
       />
       <div className="flex items-center gap-2">
         <OptImage
