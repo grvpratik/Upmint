@@ -30,7 +30,7 @@ const IntroFeatured = () => {
           />
         </Link>
       </div>
-      <div className="hidden gap-3 md:grid md:grid-cols-1 md:gap-4 lg:gap-6">
+      <div className="hidden gap-3 md:grid md:grid-cols-1 md:gap-4 lg:gap-6 ">
         <Link href={""}>
           {" "}
           <IntroSquareCard

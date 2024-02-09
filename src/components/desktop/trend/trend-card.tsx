@@ -27,7 +27,7 @@ const MintTabCard = ({ data, index }: { data: any; index: number }) => {
 
   return (
     <Link
-      className="rounded-lg transition-all duration-200 ease-in-out hover:bg-gray-500/10  "
+      className="group rounded-lg transition-all duration-200 "
       href={`/projects/${slug}`}
     >
       <div className="mx-3 flex gap-4 py-2 ">
@@ -36,15 +36,15 @@ const MintTabCard = ({ data, index }: { data: any; index: number }) => {
         </div>
 
         <OptImage
-          className=" bg-background relative mx-auto my-2 aspect-square h-14 w-14  overflow-hidden rounded-xl "
+          className=" bg-background relative mx-auto my-2 aspect-square h-14 w-14  overflow-hidden rounded-xl transition-all duration-200  group-hover:scale-105 "
           src={imageUrl}
           alt={name}
         />
 
-        <div className=" flex w-full flex-col justify-center  rounded-lg transition-all duration-100 ease-in-out hover:scale-[0.98] active:scale-95">
+        <div className=" flex w-full flex-col justify-center  rounded-lg ">
           <div className="flex justify-between">
             <div className="flex">
-              <div className=" mr-1  line-clamp-1 text-center text-base font-bold text-gray-800 opacity-90 dark:text-gray-100">
+              <div className=" mr-1 line-clamp-1 text-center  text-base  font-bold text-gray-800  transition-all duration-200 group-hover:translate-x-3 dark:text-gray-100">
                 {name}
               </div>
               <div className=" my-auto">

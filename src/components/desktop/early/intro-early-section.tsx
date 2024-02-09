@@ -53,18 +53,18 @@ const IntroEarlySection = ({ data, error }: IntroEarlySectionProps) => {
           <div className="flex items-center gap-2">
             {" "}
             <div
-              className=" border-1 cursor-pointer rounded border-solid bg-gray-300/25 shadow-depth p-1.5 transition  duration-75 hover:scale-95 hover:bg-gray-300/25"
+              className=" border-1 cursor-pointer rounded border-solid bg-gray-300/25 p-1.5 shadow-depth  duration-200 hover:bg-[#616467] hover:bg-gray-300/25 hover:text-white active:scale-95 dark:text-neutral-200"
               onClick={() => navigation("left")}
             >
               <ChevronLeftSvg className="h-5 w-5" />
             </div>
             <div
-              className=" border-1 cursor-pointer  rounded  border-solid bg-gray-300/25 shadow-depth p-1.5 transition duration-75 hover:scale-95 hover:bg-gray-300/25 "
+              className="  border-1 cursor-pointer rounded border-solid bg-gray-300/25 p-1.5 shadow-depth  duration-200 hover:bg-[#616467] hover:bg-gray-300/25 hover:text-white active:scale-95 dark:text-neutral-200 "
               onClick={() => navigation("right")}
             >
               <ChevronRightSvg className="h-5 w-5" />
             </div>{" "}
-            <Button.Secondary className="">view all</Button.Secondary>
+            {/* <Button.Secondary className="">view all</Button.Secondary> */}
           </div>
         </div>
         <div className=" no-scrollbar overflow-y-auto">

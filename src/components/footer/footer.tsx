@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer
-      className="w-full text-cletter"
+      className="w-full text-cletter font-inter"
       aria-labelledby="footer-heading "
     >
       <MarginX>

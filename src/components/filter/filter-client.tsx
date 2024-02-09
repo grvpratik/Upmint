@@ -7,13 +7,13 @@ import Button from "@/components/ui/Button";
 import getProjects from "@/actions/getProjects";
 import CircleIncidator from "@/components/loaders/circle-indicator";
 
-import CardWithBanner from "@/components/filter/collection-card";
+import CollectionCard from "@/components/filter/collection-card";
 import TagFilter from "@/components/filter/tag-filter";
 import FilterSearch from "@/components/filter/filter-search";
 import FilterList from "@/components/filter/filter-list";
 import CardLoading from "@/components/loaders/card-loading";
 import { ProjectDetailProps } from "@/libs/types";
-import { AxiosError } from "axios";
+
 
 const ITEM_PER_PAGE: number = 8;
 
@@ -73,7 +73,7 @@ const FilterClient = () => {
   );
 
   return (
-    <MarginX>
+    
       <div className="grid w-full grid-cols-10 gap-2">
         <div className="col-span-10 my-6 flex flex-col gap-2 md:col-span-2">
           <FilterSearch filter={filter} setFilter={setFilter} />
@@ -85,12 +85,12 @@ const FilterClient = () => {
           />
         </div>
         <div className="col-span-10 flex flex-col items-center justify-center gap-2 md:col-span-8">
-          <div className="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {isLoading && filter.page === 1 ? (
               <CardLoading numberOfCards={12} />
             ) : fetchedData && fetchedData.length > 0 ? (
               fetchedData.map((data: ProjectDetailProps, index: number) => (
-                <CardWithBanner data={data} key={data?._id} />
+                <CollectionCard data={data} key={data?._id} />
               ))
             ) : (
               <div className="col-span-full flex  w-full items-center justify-center">
@@ -103,7 +103,7 @@ const FilterClient = () => {
           )}
         </div>
       </div>
-    </MarginX>
+    
   );
 };
 
