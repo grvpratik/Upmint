@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
-import MarginX from "../margin-container";
 import Link from "next/link";
+
+
+import MarginX from "../margin-container";
 
 export const Footer = () => {
   return (

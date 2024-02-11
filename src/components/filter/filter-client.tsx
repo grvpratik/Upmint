@@ -85,7 +85,7 @@ const FilterClient = () => {
           />
         </div>
         <div className="col-span-10 flex flex-col items-center justify-center gap-2 md:col-span-8">
-          <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="my-6 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full self-center place-self-center items-center content-center">
             {isLoading && filter.page === 1 ? (
               <CardLoading numberOfCards={12} />
             ) : fetchedData && fetchedData.length > 0 ? (

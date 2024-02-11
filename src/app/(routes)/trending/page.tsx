@@ -2,11 +2,12 @@ import React from "react";
 
 import OptImage from "@/components/ui/optimised-image";
 import FilterClient from "@/components/filter/filter-client";
+import MarginX from "@/components/margin-container";
 
 const TrendingPage = () => {
   return (
-    <>
-      <div className="relative top-0  overflow-hidden rounded-xl md:mx-12 md:my-4 lg:mx-20">
+    <MarginX>
+      <div className="relative top-0  overflow-hidden rounded-xl  md:my-4 ">
         {" "}
         <OptImage
           className="  max-w-screen aspect-[16/8] max-h-[30rem] w-full overflow-hidden  rounded-xl"
@@ -17,7 +18,7 @@ const TrendingPage = () => {
         />
         <FilterClient />
       </div>
-    </>
+    </MarginX>
   );
 };
 

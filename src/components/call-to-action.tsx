@@ -5,7 +5,7 @@ import ToggleTheme from "./ui/toggle-theme";
 const CallToAction = () => {
   return (
     <MarginX>
-      <div><ToggleTheme/></div>
+      <ToggleTheme/>
     </MarginX>
   );
 };
