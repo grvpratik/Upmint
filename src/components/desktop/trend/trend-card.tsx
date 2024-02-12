@@ -6,6 +6,17 @@ import OptImage from "@/components/ui/optimised-image";
 import { formatDate, nFormatter } from "@/libs/utils";
 import { TriagleFilledSvg, VerifiedSvg } from "@/components/icons/svg";
 
+interface TrendCardProps{
+  slug: string;
+  name: string;
+  imageUrl: string;
+  verified: boolean;
+  prevFollower: number;
+  nextFollower: number;
+  mintDate: any;
+}
+
+
 const MintTabCard = ({ data, index }: { data: any; index: number }) => {
   const {
     slug,

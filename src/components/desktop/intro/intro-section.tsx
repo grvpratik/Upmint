@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Image from "next/image";
+
 
 import MarginX from "@/components/margin-container";
 import IntroCarosel from "./intro-carosel";
