@@ -44,9 +44,22 @@
 }
 
 
-/* body {
-    background: rgb(237, 237, 237);
-    background: linear-gradient(90deg, rgb(222, 222, 222) 0%, rgb(217, 217, 217) 48%, rgb(240, 240, 240)94%);
-    z-index: 1;
-   
-}  */
+.fade-in {
+    animation: fade-in 0.5s;
+}
+
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        top: 150%;
+        
+    }
+
+    to {
+        opacity: 100;
+        top: 100%;
+       
+    }
+}

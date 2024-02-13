@@ -11,7 +11,7 @@ const IntroPosts = () => {
       <div className=" flex w-full flex-col">
         {" "}
         <div className="flex  h-14 w-full items-center justify-between">
-          <h1 className="   font-montserrat text-lg font-bold md:text-2xl ">
+          <h1 className=" font-montserrat text-lg font-bold md:text-2xl ">
             Posts
           </h1>
           <Link href={"/posts"}>
@@ -27,11 +27,11 @@ const IntroPosts = () => {
             alt=""
           />
 
-          <div className="my-1 flex  flex-col md:gap-1 gap-1.5 ">
+          <div className="my-1 flex  flex-col gap-0.5">
             <span className="line-clamp-2 text-sm  font-medium leading-tight md:text-base ">
               How to start 💸 earnging from crypto 🏦 without investment
             </span>
-            <span className="  line-clamp-1 text-xs leading-4  opacity-70">
+            <span className="  line-clamp-1 text-xs leading-4  text-gray-700">
               Lorem ipsum dolor sit ametnem alias asperiores quis, et aut
               voluptatum delectus sed sapiente excepturi incidunt ad nobis, iure
               quia consequatur.

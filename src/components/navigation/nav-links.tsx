@@ -24,18 +24,18 @@ export function MainNav({
 							href={"/trending"}
 							className="p-2.5 cursor-pointer rounded-lg flex gap-2 items-center hover:bg-gray-100/10"
 						>
-							<span>
+							
 								<TrendingIconSvg className="h-5 w-5" />
-							</span>
+							
 							<span>Trending Projects</span>
 						</Link>
 						<Link
 							href={"/early"}
 							className="p-2.5 cursor-pointer rounded-lg flex gap-2 items-center hover:bg-gray-100/10 "
 						>
-							<span>
+							
 								<LatestIconSvg className="h-5 w-5" />
-							</span>
+						
 							<span>Early Projects</span>
 						</Link>
 					</div>
@@ -57,3 +57,6 @@ export function MainNav({
 		</nav>
 	);
 }
+
+
+				// <div className="absolute rounded-xl   w-36  group-hover:inline-block  transition-all duration-500 hidden left-0 pt-2 top-full fade-in"></div>
