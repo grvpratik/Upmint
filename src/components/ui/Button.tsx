@@ -12,7 +12,8 @@ const PrimaryButton: React.FC<ButtonProps> = ({
 }) => (
   <button
     className={cn(
-      "rounded bg-blue-500 px-3 py-1.5 font-medium text-white transition-all duration-200 ease-in-out hover:bg-blue-700",
+      "cursor-pointer  rounded-lg border-b-[4px]   border-blue-600 bg-blue-500 px-6 py-2 text-white transition-all hover:-translate-y-[1px] hover:border-b-[6px] hover:brightness-110 active:translate-y-[2px] active:border-b-[2px] active:brightness-90 ",
+
       className,
     )}
     {...props}
@@ -28,7 +29,7 @@ const SecondaryButton: React.FC<ButtonProps> = ({
 }) => (
   <button
     className={cn(
-      "flex rounded text-sm bg-gray-200 bg-gray-300/25 px-2 py-1 text-gray-800 transition  hover:bg-gray-300/50 md:px-3 md:py-1.5  dark:text-gray-200 ",
+      "cursor-pointer  rounded-lg border-b-[4px]   border-gray-400 bg-white px-6 py-2 text-black transition-all hover:-translate-y-[1px] hover:border-b-[6px] hover:brightness-110 active:translate-y-[2px] active:border-b-[2px] active:brightness-90 ",
       className,
     )}
     {...props}
