@@ -13,7 +13,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-cbackground text-cletter antialiased ",
+          "no-scrollbar bg-cbackground text-cletter antialiased",
           montserrat.variable,
           outfit.variable,
           inter.variable,

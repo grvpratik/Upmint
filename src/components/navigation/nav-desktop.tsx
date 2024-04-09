@@ -6,6 +6,7 @@ import { MainNav } from "@/components/navigation/nav-links";
 import MarginX from "@/components/margin-container";
 import { cn } from "@/libs/utils";
 import Button from "@/components/ui/Button";
+import SearchPopup from "./search-popup";
 
 const Nav = ({ className }: { className?: string }) => {
 	return (
@@ -20,9 +21,7 @@ const Nav = ({ className }: { className?: string }) => {
 						</h1>
 					</div>
 					<div className="flex flex-1 justify-between sm:mx:2 md:mx:3  lg:mx-4">
-						<div className=" flex items-center  flex-shrink-0 mx-4">
-							<SearchData />
-						</div>
+						<SearchPopup/>
 						<div className="flex items-center justify-between sm:mx:2 md:mx:3  lg:mx-4">
 							<MainNav />
 						</div>

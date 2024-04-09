@@ -10,7 +10,7 @@ interface IntroCardProps {
 
 const IntroSquareCard = ({ src, alt, name, muted }: IntroCardProps) => {
   return (
-    <div className="relative z-20 w-full">
+    <div className="relative  w-full">
       <OptImage
         className=" aspect-square max-h-[27rem] w-full overflow-hidden rounded-lg  sm:max-h-[34rem] md:max-h-[84rem]"
         src={src}

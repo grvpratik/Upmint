@@ -8,7 +8,7 @@ import MarginX from "../margin-container";
 export const Footer = () => {
   return (
     <footer
-      className="w-full text-cletter font-inter"
+      className="w-full text-cletter font-outfit"
       aria-labelledby="footer-heading "
     >
       <MarginX>
